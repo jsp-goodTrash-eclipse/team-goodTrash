@@ -1,0 +1,215 @@
+@charset 'utf-8';
+@import url("reset.css");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
+@font-face {
+  font-family: myFont;
+  src: url("/admin_login_main/font/Dongle/Dongle-Light.ttf");
+}
+@font-face {
+  font-family: newFont;
+  src: url("NaverNanumSquareNeo/TTF/NanumSquareNeo-dEb.ttf");
+}
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-eco.css");
+/* body {
+  font-family: "Black Han Sans", sans-serif;
+  background-color: #353535;
+} */
+body {
+  font-family: "newFont";
+  background-color: #353535;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+hr {
+  border: #575757 solid 1px;
+}
+
+.all_wrapper {
+  width: 100%;
+  display: flex;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0%;
+  padding-top: 30px;
+  text-align: center;
+  width: 15%;
+  background-color: #424242;
+  color: white;
+  height: 100%;
+}
+.logo {
+  font-size: 2em;
+}
+.go_to_site a {
+  color: #bdbdbd;
+  width: 60%;
+  margin: 0 auto;
+}
+.list_wrapper {
+  margin-top: 50px;
+  color: white;
+}
+details {
+  margin-bottom: 10px;
+  margin-left: 26%;
+  text-align: left;
+  width: 70%;
+}
+
+details summary {
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+}
+summary div {
+  width: 80%;
+}
+details summary::marker {
+  font-size: 0;
+}
+details ul {
+  margin-top: 0%;
+  margin-bottom: 40px;
+}
+details ul li a {
+  display: block;
+}
+/* details ul li a::hover {
+  background: #333;
+  color: #fff;
+} */
+
+li {
+  margin-top: 20px;
+  cursor: pointer;
+}
+main {
+  width: 85%;
+  background-color: #eeeeee;
+  margin-left: 15%;
+  padding-bottom: 50px;
+  height: fit-content;
+}
+main div {
+  background-color: #ffffff;
+  padding-top: 5px;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 30px;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  color: #eeeeee;
+  font-family: "Black Han Sans", sans-serif;
+}
+button.button1 {
+  border: 1px solid#ffffff;
+  background-color: #fd6064;
+  margin-right: 0%;
+  margin-bottom: 15px;
+}
+button.button2 {
+  border: 1px solid#ffffff;
+  background-color: #acb8ca;
+  color: #353535;
+}
+div.main_header {
+  margin-bottom: 10px;
+  height: 4%;
+  text-align: right;
+}
+.today_list {
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  width: 98%;
+}
+ul.today_list_firstline {
+  display: table-row;
+}
+.today_work {
+  margin-left: 30px;
+  font-size: 1.5em;
+}
+
+ul.today_list_firstline li {
+  margin-bottom: 20px;
+  float: left;
+  margin-left: 30px;
+}
+ul.today_list_firstline li a {
+  color: #353535;
+}
+div.main_num2 {
+  display: flex;
+  margin: 0 auto;
+  width: 98%;
+  background-color: #eeeeee;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+.vistor {
+  border-radius: 8px;
+  width: 49%;
+}
+.summary {
+  border-radius: 8px;
+  width: 49%;
+}
+canvas {
+  width: 98%;
+  margin: 0 auto;
+}
+div.main_num3 {
+  display: flex;
+  margin: 0 auto;
+  margin-top: 5px;
+  width: 98%;
+  height: 500px;
+  background-color: #eeeeee;
+  justify-content: space-between;
+  font-size: 1.5em;
+}
+.review {
+  border-radius: 8px;
+  width: 49%;
+}
+.user_review {
+  display: flex;
+  width: 80%;
+  height: 50px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 0.7em;
+}
+.review_img {
+  width: 18%;
+  height: 100%;
+}
+.review_word {
+  font-size: 0.8em;
+  font-family: myFont;
+  margin-left: 20px;
+}
+.reaction {
+  border-radius: 8px;
+  width: 49%;
+}
+.title {
+  margin: 20px 0 20px 20px;
+}
+button {
+  font-family: inherit;
+}

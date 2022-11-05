@@ -1,0 +1,354 @@
+/* 
+---------------------------
+          HEADER
+--------------------------- */
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    position: relative;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+button {
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+}
+.top_home span.logo {
+    width: 160px;
+    height: 31px;
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    display: inline-block;
+}
+
+#header.util {
+    line-height: 40px;
+    background-color: #f2f2f2;
+}
+span.sp {
+    float: left;
+    padding-top: 9px;
+    padding-right: 2px;
+}
+span.sp img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    background-size: 100% 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 100%;
+    display: inline-block;
+}
+div.link_nav li {
+    margin-left: 2px;
+}
+div.top {
+    background-color: #f2f2f2;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0;
+}
+div.link_my {
+    float: right;
+}
+div.link_my li {
+    float: left;
+    margin-left: 20px;
+    padding-top: 7px;
+}
+div.link_my li a{
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+}
+
+#header .home a {
+    margin: 0 auto;
+    display: block;
+    width: 155px;
+    height: 25px;
+}
+span.btn_search_icon {
+    background: url(https://www.shouse.garden/images/common/sp_common.png);
+    background-position: -125px -32px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+/* inner */
+.holder {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+div.inner {
+    height: 40px;
+    padding: 12px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+div.inner li {
+    float: left;
+}
+li.menu img {
+    padding-top: 12px;
+    padding-right: 22px;
+    height: 16px;
+}
+div.inner li a {
+    text-decoration: none;
+    display: block;
+    padding: 0 17px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222624;
+}
+div.inner span.c {
+    float: right;
+    font-size: 0px;
+    position: absolute;
+}
+span.write {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 22px;
+    height: 22px;
+    background-position: -101px -32px;
+}
+a.btn_t.write {
+    position: absolute;
+    top: 8px;
+    right: 221px;
+}
+span.cart {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 28px;
+    height: 25px;
+    background-position: -73px -32px;
+}
+a.btn_t.cart {
+    position: absolute;
+    top: 7px;
+    left: 930px;
+}
+span.my {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 21px;
+    height: 21px;
+    background-position: -50px -32px;
+}
+a.btn_t.my {
+    position: absolute;
+    top: 9px;
+    right: 315px;
+}
+.inner ul {
+    margin-left: 60px;
+}
+span.menu {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 26px;
+    height: 17px;
+    background-position: -22px -32px;
+    top: 10px;
+}
+
+input {
+    list-style: none;
+}
+div.search {
+    position: absolute;
+    right: 0;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    border: 0;
+    width: 160px;
+    padding-right: 20px;
+    text-align: 14px;
+    height: 38px;
+}
+span.btn_search_icon {
+    background: url(https://www.shouse.garden/images/common/sp_common.png);
+    background-position: -125px -32px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+div.inner button {
+    z-index: 100;
+    position: absolute;
+    
+}
+div.search input {
+    padding-top: 13px;
+    margin-left: -1px;
+    width: 140px;
+    padding-right: 20px;
+    text-indent: 14px;
+    font-size: 12px;
+    background-color: transparent;
+    box-sizing: content-box;
+    border: none;
+} 
+div.search button.btn_search {
+    width: 34px;
+    height: 26px;
+    right: 5px;
+    top: 0px;
+}
+
+/* ------------------------
+        1대1 문의
+ --------------------------  */
+ thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+ }
+ .sub_con {
+    min-height: 500px;
+    max-width: 1200px;
+    margin: auto;
+}
+ h3.tit {
+    font-size: 30px;
+    font-weight: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+table {
+    width: 100%;
+    text-align: center;
+    border-top: 3px solid #222;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+table tr th {
+    padding: 15px;
+    background-color: #fff;
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+}
+table tr td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+button.btn {
+    color: #333;
+    background: #f8f8f8;
+    border: 1px solid #c5c5c5;
+}
+button.btn_del {
+    color: #fff;
+    background: #e05438;
+}
+button.btn {
+    height: 40px;
+    line-height: 38px;
+    font-size: 16px;
+    vertical-align: middle;
+    padding: 0 20px;
+}
+tr.t_onoff {
+    text-align: left;
+}
+.q_box, .a_box {
+    padding: 15px 15px 15px 90px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+.a_box {
+    background-color: #f7f8f9;
+}
+span.arrow2 {
+    background-image: url(https://15990903.or.kr/common/images/sub/arrow_down.png);
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+a {
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+/* 
+-------------------------
+          footer 
+-------------------------
+*/
+#footer {
+    background-color: #4d4d4d;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+#footer.holder {
+    padding: 54px 40px;
+}
+#footer .fnav {
+    margin-top: 27px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #3e3e3e;
+    border-radius: 4px;
+}
+#footer .fnav ul {
+    display: inline-block;
+    vertical-align: top;
+}
+#footer .fnav li {
+    float: left;
+}
+#footer .fnav a {
+    display: block;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+}
+#footer .bottom {
+    margin-top: 26px;
+    padding-top: 32px;
+    color: #b3b3b3;
+    word-break: keep-all;
+    border-top: 2px solid #494949;
+}
+#footer .info {
+    line-height: 26px;
+    font-size: 15px;
+    padding-top: 16px;
+    color: #fff;
+}
+#footer .siteinfo {
+    margin-top: 37px;
+    color: #d9d9d9;
+    line-height: 26px;
+    font-size: 15px;
+}
+span.arrow {
+    position: relative;
+    background: url(https://www.shouse.garden/images/common/arrow02_r.png);
+    background-size: 100% 100%;
+    width: 6px;
+    height: 9px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 14px;
+}
+.fnav li {
+    margin-left: 28px;
+}

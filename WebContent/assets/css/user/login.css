@@ -1,0 +1,101 @@
+body{
+    display: block;
+    width:400px;
+    margin: 0 auto;
+}
+#body{
+    
+    position: relative;
+    min-width: 400px;
+    overflow: hidden;
+    letter-spacing: -0.05em;
+    
+}
+form{
+    width: 400px;
+    height: 544px;
+    display: block;
+    
+}
+
+.login{
+    display: block;
+    
+}
+
+input.pw{
+    text-indent: 19px;
+    height: 50px;
+    width: 400px;
+    font-size: 15px;
+    color: #808080;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input.email_id{
+    text-indent: 19px;
+    height: 50px;
+    width: 400px;
+    font-size: 15px;
+    color: #808080;
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.email_id{
+    margin-bottom: 10px;
+}
+.home{
+    margin-top: 100px;
+    margin-bottom: 25px;
+    margin-left: 97px;
+}
+.login_btn{
+    color: #fff;
+    background-color: black;
+    height: 50px;
+    width: 400px;
+    margin-top: 12px;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+
+.save_email{
+    font-size:15px;
+    color: #222624;
+    padding-left: 0;
+    line-height: 22px;
+    text-align: left !important;
+    
+}
+#div{
+    display: inline-block;
+}
+.link_fr{
+    font-size: 15px;
+    padding-left: 127px;
+    margin-top: 5px;
+}
+
+.kakao{
+    background-color: #FEE500;
+    color: black;
+    display: block;
+    box-sizing: border-box;
+    width: 400px;
+    height: 50px;
+    padding: 11px 16px 10px;
+    border: 1px solid #FEE500;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-left: -40px;
+    
+
+
+}
+

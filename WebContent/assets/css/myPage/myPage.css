@@ -1,0 +1,618 @@
+/* 
+---------------------------
+          HEADER
+--------------------------- */
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    position: relative;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+button {
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+}
+.top_home span.logo {
+    width: 160px;
+    height: 31px;
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    display: inline-block;
+}
+
+#header.util {
+    line-height: 40px;
+    background-color: #f2f2f2;
+}
+span.sp {
+    float: left;
+    padding-top: 9px;
+    padding-right: 2px;
+}
+span.sp img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    background-size: 100% 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 100%;
+    display: inline-block;
+}
+div.link_nav li {
+    margin-left: 2px;
+}
+div.top {
+    background-color: #f2f2f2;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0;
+}
+div.link_my {
+    float: right;
+}
+div.link_my li {
+    float: left;
+    margin-left: 20px;
+    padding-top: 7px;
+}
+div.link_my li a{
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+}
+
+#header .home a {
+    margin: 0 auto;
+    display: block;
+    width: 155px;
+    height: 25px;
+}
+span.btn_search_icon {
+    background: url(https://www.shouse.garden/images/common/sp_common.png);
+    background-position: -125px -32px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+/* inner */
+.holder {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+div.inner {
+    height: 40px;
+    padding: 12px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+div.inner li {
+    float: left;
+}
+li.menu img {
+    padding-top: 12px;
+    padding-right: 22px;
+    height: 16px;
+}
+div.inner li a {
+    text-decoration: none;
+    display: block;
+    padding: 0 17px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222624;
+}
+div.inner span.c {
+    float: right;
+    font-size: 0px;
+    position: absolute;
+}
+span.write {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 22px;
+    height: 22px;
+    background-position: -101px -32px;
+}
+a.btn_t.write {
+    position: absolute;
+    top: 8px;
+    right: 221px;
+}
+span.cart {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 28px;
+    height: 25px;
+    background-position: -73px -32px;
+}
+a.btn_t.cart {
+    position: absolute;
+    top: 7px;
+    left: 930px;
+}
+span.my {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 21px;
+    height: 21px;
+    background-position: -50px -32px;
+}
+a.btn_t.my {
+    position: absolute;
+    top: 9px;
+    right: 315px;
+}
+.inner ul {
+    margin-left: 60px;
+}
+span.menu {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 26px;
+    height: 17px;
+    background-position: -22px -32px;
+    top: 10px;
+}
+
+input {
+    list-style: none;
+}
+div.search {
+    position: absolute;
+    right: 0;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    border: 0;
+    width: 160px;
+    padding-right: 20px;
+    text-align: 14px;
+    height: 38px;
+}
+span.btn_search_icon {
+    background: url(https://www.shouse.garden/images/common/sp_common.png);
+    background-position: -125px -32px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+div.inner button {
+    z-index: 100;
+    position: absolute;
+    
+}
+div.search input {
+    padding-top: 13px;
+    margin-left: -1px;
+    width: 140px;
+    padding-right: 20px;
+    text-indent: 14px;
+    font-size: 12px;
+    background-color: transparent;
+    box-sizing: content-box;
+    border: none;
+} 
+div.search button.btn_search {
+    width: 34px;
+    height: 26px;
+    right: 5px;
+    top: 0px;
+}
+
+/* --------------------------------
+            container
+-----------------------------------   */
+#container {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 600px;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.mymenu {
+    float: left;
+    width: 20%;
+}
+.mymenu dt {
+    border-bottom: 1px solid #d9d9d9;
+}
+dl, dt, dd {
+    margin: 0;
+    padding: 0;
+
+}
+.mymenu .btn_tg {
+    background: url(https://www.shouse.garden/images/common/arrow21_b.png) calc(100% - 9px) center no-repeat;
+    width: 100%;
+    height: 50px;
+    text-align: left;
+    text-indent: 9px;
+    font-size: 16px;
+    background-size: 12px auto;
+}
+.mymenu dd {
+    padding: 11px 0;
+}
+.mymenu dd a {
+    display: block;
+    line-height: 36px;
+    text-indent: 19px;
+    font-size: 14px;
+    color: #808080;
+    text-decoration: none;
+}
+.mycon {
+    float: right;
+    width: 75.83%;
+}
+.mycon .myprofile {
+    padding: 67px 58.46% 45px 7.69%;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    position: relative;
+}
+div#photo {
+    background-image: url(https://www.shouse.garden/data/profile/profile.jpg);
+}
+div#photo {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    border: 1px solid #d9d9d9;
+    border-radius: 100%;
+    margin: 0 auto;
+}
+.thumbs {
+    background-position: center center;
+    background-size: cover;
+}
+.relative {
+    margin: 8px;
+    height: 40px;
+    position: relative;
+}
+.myprofile .txt {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 20px;
+    font-size: 14px;
+    color: #808080;
+    word-break: keep-all;
+    margin-left: 45px;
+}
+.myprofile .btn_tg {
+    margin-left: 14px;
+    width: 12px;
+    height: 20px;
+    font-size: 0;
+    background: url(https://www.shouse.garden/images/ico/pen_g.png) center center no-repeat;
+    background-size: 100% auto;
+    position: absolute;
+    margin-top: 13px;
+}
+button.sns {
+    float: left;
+    margin: 2px;
+}
+button.sns.sns1 {
+    background: url(https://www.shouse.garden/images/ico/ico_sns_1.png);
+    width: 30px;
+    height: 30px;
+    background-size: 14px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #d9d9d9;
+    display: block;
+    font-size: 0;
+    border-radius: 100%;
+}
+button.sns.sns2 {
+    background: url(https://www.shouse.garden/images/ico/ico_sns_2.png);
+    width: 30px;
+    height: 30px;
+    background-size: 14px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #d9d9d9;
+    display: block;
+    font-size: 0;
+    border-radius: 100%;
+}
+button.sns.sns3 {
+    background: url(https://www.shouse.garden/images/ico/ico_sns_3.png);
+    width: 30px;
+    height: 30px;
+    background-size: 14px;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 1px solid #d9d9d9;
+    display: block;
+    font-size: 0;
+    border-radius: 100%;
+}
+.sns_list {
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+.myprofile ul {
+    position: absolute;
+    top: 50%;
+    right: 8.35%;
+    width: 50.11%;
+    transform: translateY(-50%);
+}
+.myprofile li {
+    float: left;
+    width: 33.33%;
+    font-size: 14px;
+    color: #808080;
+    text-decoration: none;
+    text-align: center;
+}
+.myprofile ul strong {
+    margin-bottom: 9px;
+    display: block;
+    font-size: 21px;
+    color: #4d4d4d;
+}
+
+/*test*/
+summary {
+    border-bottom: 1px solid#d9d9d9;
+    height: 50px;
+    text-align: left;
+    text-indent: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222624;
+    list-style: none;
+    margin-top: 15px;
+    padding-top: 4px;
+}
+li.sub_menu a {
+    font-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+li.sub_menu {
+    padding: 11px 0;
+    text-indent: 19px;
+    display: block;
+    line-height: 36px;
+    font-size: 14px;
+    color: #808080;
+}
+.mymenu .btn_arrow {
+    background: url(https://www.shouse.garden/images/common/arrow21_b.png) calc(100% - 9px) center no-repeat;
+    width: 13%;
+    height: 13px;
+    text-align: left;
+    text-indent: 9px;
+    font-size: 16px;
+    padding-top: 20px;
+    position: absolute;
+}
+.mymenu .btn_arrow2 {
+    margin-left: -19px;
+}
+
+/* mystate */
+.mystate li {
+    float: left;
+    width: 33.33%;
+    line-height: 105px;
+    font-size: 16px;
+    color: #b3b3b3;
+}
+.mystate span .icon {
+    background-image: url(https://www.shouse.garden/images/ico/my_alarm.png);
+}
+li span.icon {
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    background-size: 100% 100%;
+}
+li.span.icon1 {
+    background-image: url(https://www.shouse.garden/images/ico/my_alarm.png);
+}
+li.span.icon2 {
+    background-image: url(https://www.shouse.garden/images/ico/my_like.png);
+}
+li.span.icon3 {
+    background-image: url(https://www.shouse.garden/images/ico/my_scrap.png);
+}
+.mystate li {
+    float: left;
+    width: 33.33%;
+    line-height: 105px;
+    font-size: 16px;
+    color: #b3b3b3;
+}
+.mylink {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 104px;
+    height: 100px;
+}
+ul.mystate {
+    margin-left: 140px;
+}
+.mylink a {
+    display: block;
+    line-height: 80px;
+    font-size: 15px;
+    margin-top: 10px;
+    float: left;
+    margin-left: 100px;
+}
+span.icon {
+    background: url(https://www.shouse.garden/images/ico/write2.png);
+    height: 25px;
+    vertical-align: text-bottom;
+}
+span.point {
+    font-size: 25px;
+    margin-left: 10px;
+}
+span.icon.icon1 {
+    background-image: url(https://www.shouse.garden/images/ico/my_alarm.png);
+}
+span.icon.icon2 {
+    background-image: url(https://www.shouse.garden/images/ico/my_like.png);
+}
+span.icon.icon3 {
+    background-image: url(https://www.shouse.garden/images/ico/pen_g.png);
+}
+button.point_btn {
+    border: 1px solid #ddd;
+    width: 50px;
+    height: 30px;
+    float: right;
+    margin-right: 100px;
+    margin-top: 25px;
+    position: absolute;
+    right: 10px
+}
+
+
+
+li.menu-v1 {
+    border-bottom: 1px solid #d9d9d9;
+    height: 50px;
+    text-align: left;
+    text-indent: 9px;
+    font-size: 16px;
+    font-weight:700;
+    padding-top: 15px;
+}
+ul.submenu {
+    display: block;
+    line-height: 36px;
+    text-indent: 19px;
+    font-size: 14px;
+    color: #808080;
+}
+
+
+
+
+/*test*/
+summary {
+    border-bottom: 1px solid#d9d9d9;
+    height: 50px;
+    text-align: left;
+    text-indent: 9px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222624;
+    list-style: none;
+    margin-top: 15px;
+    padding-top: 4px;
+}
+li.sub_menu a {
+    font-style: none;
+    text-decoration: none;
+    color: inherit;
+}
+li.sub_menu {
+    padding: 11px 0;
+    text-indent: 19px;
+    display: block;
+    line-height: 36px;
+    font-size: 14px;
+    color: #808080;
+}
+
+
+
+/* 
+-------------------------
+          footer 
+-------------------------
+*/
+#footer {
+    background-color: #4d4d4d;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+#footer.holder {
+    padding: 54px 40px;
+}
+#footer .fnav {
+    margin-top: 27px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #3e3e3e;
+    border-radius: 4px;
+}
+#footer .fnav ul {
+    display: inline-block;
+    vertical-align: top;
+}
+#footer .fnav li {
+    float: left;
+}
+#footer .fnav a {
+    display: block;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+}
+#footer .bottom {
+    margin-top: 26px;
+    padding-top: 32px;
+    color: #b3b3b3;
+    word-break: keep-all;
+    border-top: 2px solid #494949;
+}
+#footer .info {
+    line-height: 26px;
+    font-size: 15px;
+    padding-top: 16px;
+    color: #fff;
+}
+#footer .siteinfo {
+    margin-top: 37px;
+    color: #d9d9d9;
+    line-height: 26px;
+    font-size: 15px;
+}
+span.arrow {
+    position: relative;
+    background: url(https://www.shouse.garden/images/common/arrow02_r.png);
+    background-size: 100% 100%;
+    width: 6px;
+    height: 9px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 14px;
+}
+.fnav li {
+    margin-left: 28px;
+}
+
+
+/* .menu-v1 {
+    line-height: 2;
+    border: 1px solid;
+}
+.menu-v1 .submenu {
+    margin-top: 7px;
+    background-color: #fff;
+    display: none;
+
+} */
