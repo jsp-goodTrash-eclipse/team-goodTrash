@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "https://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="com.goodTrash.app.user.vo.UserVO" alias="UserVO"/>
+		<typeAlias type="com.goodTrash.app.admin.vo.AdminVO" alias="AdminVO"/>
+		<typeAlias type="com.goodTrash.app.driver.vo.DriverVO" alias="DriverVO"/>
+		<typeAlias type="com.goodTrash.app.comment.vo.CommentVO" alias="CommentVO"/>
+		<typeAlias type="com.goodTrash.app.garbageCollect.vo.GarbageCollectVO" alias="GarbageCollectVO"/>
+		<typeAlias type="com.goodTrash.app.inquiry.vo.InquiryVO" alias="InquiryVO"/>
+		<typeAlias type="com.goodTrash.app.notice.vo.NoticeVO" alias="NoticeVO"/>
+		<typeAlias type="com.goodTrash.app.order.vo.OrderVO" alias="OrderVO"/>
+		<typeAlias type="com.goodTrash.app.payment.vo.PaymentVO" alias="PaymentVO"/>
+		<typeAlias type="com.goodTrash.app.product.vo.ProductVO" alias="ProductVO"/>
+		<typeAlias type="com.goodTrash.app.refund.vo.RefundVO" alias="RefundVO"/>
+		<typeAlias type="com.goodTrash.app.review.vo.ReviewVO" alias="ReviewVO"/>
+		<typeAlias type="com.goodTrash.app.shoppingBasket.vo.ShoppingBasketVO" alias="ShoppingBasketVO"/>
+	</typeAliases>
+	
+	<environments default="mysql">
+		<environment id="mysql">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/recycle_project"/>
+				<property name="username" value="root"/>
+				<property name="password" value="1234"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+		<mapper resource="com/mybatis/mapper/UserMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/AdminMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/CommentMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/DriverMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/GarbageCollectMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/InquiryMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/NoticeMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/OrderMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/PaymentMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/ProductMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/RefundMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/ReviewMapper.xml"/>
+		<mapper resource="com/mybatis/mapper/ShoppingBasketMapper.xml"/>
+	</mappers>
+</configuration>

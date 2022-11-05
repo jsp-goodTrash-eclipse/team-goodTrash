@@ -1,0 +1,182 @@
+.header_area {
+    display: flex;
+    color: #000000;
+    width: 100%;
+    height: 53px;
+}
+
+.back_area {
+    display: absolute;
+    left: 0;
+    padding-left: 15px;
+    height: 53px;
+    width: 30px;
+    line-height: 53px;
+}
+
+.back_icon {
+    background-image: url(https://www.shouse.garden/images/common/sp_common_m.png);
+    background-position: -21px -37px;
+    background-size: 100px auto;
+    width: 20px;
+    height: 13px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.setting_area {
+    display: absolute;
+    height: 53px;
+    width: 30px;
+    line-height: 63px;
+    padding-right: 15px;
+}
+
+.setting_icon {
+    background-image: url(https://shop.shouse.garden/data/skin/responsive_ver1_default_gl/images/common/sp_common_m.png);
+    background-position: -77px -37px;
+    background-size: 100px auto;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.header_text_area {
+    display: absolute;
+    text-align: center;
+    width: 80vh;
+}
+
+.header_text {
+    display: inline-block;
+    z-index: -1;
+    padding: 0 100px;
+    font-size: 16px;
+    text-align: center;
+    padding-top: 18px;
+    font-weight: bold;
+}
+
+.list_wrapper {
+    display: flex;
+}
+.my_list {
+    width: 100vh;
+    height: 49px;
+    text-align: center;
+    border-bottom: 3px solid #009a3e;
+}
+
+.my_list_text {
+    color: #009a3e;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 51px;
+}
+
+.request_list {
+    width: 100vh;
+    height: 51px;
+    text-align: center;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.request_list_text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 51px;
+}
+
+.category_wrapper {
+    width: 100%;
+    margin-top: 15px;
+    padding: 0 15px;
+}
+
+.category {
+    width: 15%;
+    height: 37px;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    line-height: 37px;
+}
+
+.category_active {
+    border: 1px solid #009a3e;
+    background-color: #009a3e;
+    color: #ffffff !important;
+}
+
+.content_wrapper {
+    margin: 15px 0 30px 0;
+}
+
+.content {
+    width: 95%;
+    height: 88px;
+    margin: 0 auto;
+    /* border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    background-color: #f8f8f8; */
+    border-top: 1px solid #d9d9d9;
+    border-bottom: 1px solid #d9d9d9;
+    position: relative;
+}
+
+.img_ing {
+    background-image: url(https://ifh.cc/g/r9t4yy.png);
+}
+
+.img_end {
+    background-image: url(https://ifh.cc/g/OAB3n6.png);
+}
+
+.content_img {
+    background-size: cover;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: calc(50% - 24px);
+}
+
+.content_title {
+    position: absolute;
+    display: inline-block;
+    top: calc(50% - 20px);
+    height: 24px;
+    font-size: 15px;
+    line-height: 24px;
+    vertical-align: top;
+    left: 76px;
+}
+
+.content_address {
+    position: absolute;
+    display: inline-block;
+    top: 40px;
+    height: 22px;
+    font-size: 13px;
+    color: #808080;
+    line-height: 24px;
+    vertical-align: top;
+    left: 76px;
+}
+
+.arrow_img {
+    background-image: url(https://www.shouse.garden/images/common/arrow05_r.png);
+    background-size: 8px auto;
+    background-repeat: no-repeat;
+    position: absolute;
+    display: inline-block;
+    width: 8px;
+    height: 13px;
+    right: 0;
+    top: 40px;
+    padding-right: 15px;
+}

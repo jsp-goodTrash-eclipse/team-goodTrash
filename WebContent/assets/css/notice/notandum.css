@@ -1,0 +1,456 @@
+/* 헤더 */
+body {
+    font: 12px/1.2 'Spoqa Han Sans', sans-serif;
+    color: #4d4d4d;
+}
+
+body {
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    position: relative;
+    margin: 0 auto;
+    padding: 0 auto;
+}
+ul, li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+button {
+    background: transparent;
+    cursor: pointer;
+    border: 0;
+}
+
+#header.util {
+    line-height: 40px;
+    background-color: #f2f2f2;
+}
+span.sp {
+    float: left;
+    padding-top: 9px;
+    padding-right: 2px;
+}
+span.sp img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    background-size: 100% 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 100%;
+    display: inline-block;
+}
+div.link_nav li {
+    margin-left: 2px;
+}
+div.top {
+    background-color: #f2f2f2;
+    height: 40px;
+    margin: 0 auto;
+    padding: 0;
+}
+div.link_my {
+    float: right;
+}
+div.link_my li {
+    float: left;
+    margin-left: 20px;
+    padding-top: 7px;
+}
+div.link_my li a{
+    text-decoration: none;
+    color: #808080;
+    font-size: 12px;
+}
+
+#header .home a {
+    margin: 0 auto;
+    display: block;
+    width: 155px;
+    height: 25px;
+}
+span.btn_search_icon {
+    background: url(https://www.shouse.garden/images/common/sp_common.png);
+    background-position: -125px -32px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+.holder {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+div.inner {
+    height: 40px;
+    padding: 12px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+div.inner li {
+    float: left;
+}
+li.menu img {
+    padding-top: 12px;
+    padding-right: 22px;
+    height: 16px;
+}
+div.inner li a {
+    text-decoration: none;
+    display: block;
+    padding: 0 17px;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #222624;
+}
+div.inner span.c {
+    float: right;
+    font-size: 0px;
+    position: absolute;
+}
+span.write {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 22px;
+    height: 22px;
+    background-position: -101px -32px;
+}
+a.btn_t.write {
+    position: absolute;
+    top: 8px;
+    right: 221px;
+}
+span.cart {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 28px;
+    height: 25px;
+    background-position: -73px -32px;
+}
+a.btn_t.cart {
+    position: absolute;
+    top: 7px;
+    left: 930px;
+}
+span.my {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 21px;
+    height: 21px;
+    background-position: -50px -32px;
+}
+a.btn_t.my {
+    position: absolute;
+    top: 9px;
+    right: 315px;
+}
+.inner ul {
+    margin-left: 60px;
+}
+span.menu {
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    width: 26px;
+    height: 17px;
+    background-position: -22px -32px;
+    top: 10px;
+}
+
+input {
+    list-style: none;
+}
+div.search {
+    position: absolute;
+    right: 0;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    border: 0;
+    width: 160px;
+    padding-right: 20px;
+    text-align: 14px;
+    height: 38px;
+}
+span.btn_search_icon {
+    background: url(https://www.shouse.garden/images/common/sp_common.png);
+    background-position: -125px -32px;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+}
+
+div.inner button {
+    z-index: 100;
+    position: absolute;
+    
+}
+div.search input {
+    padding-top: 13px;
+    margin-left: -1px;
+    width: 140px;
+    padding-right: 20px;
+    text-indent: 14px;
+    font-size: 12px;
+    background-color: transparent;
+    box-sizing: content-box;
+    border: none;
+} 
+div.search button.btn_search {
+    width: 34px;
+    height: 26px;
+    right: 5px;
+    top: 0px;
+}
+
+
+/* 중간 */
+
+#header .subnav{
+    font-size:0;
+    border-bottom:1px 
+    solid #d9d9d9;
+}
+#header .subnav ul {
+    display:block;
+    width:100%; 
+    max-width:1000px; 
+    margin:0 auto; 
+    padding:0 20px; 
+    box-sizing:border-box;
+}
+#header .subnav li{
+    display:inline-block; 
+    vertical-align:top; 
+    width:auto;
+}
+
+#header .subnav li + li{
+    margin-left:32px;
+}
+
+#header .subnav a{
+    display:inline-block; 
+    vertical-align:top;
+    line-height:49px;
+    font-size:15px;
+    font-weight:700; 
+    color:#222624;
+}
+#header .subnav .active a,
+#header .subnav .sub .active{
+    color:#009a3e;
+
+}
+#header .subnav .sub{
+    margin-left:20px; 
+    display:inline-block; 
+    vertical-align:top; 
+    font-size:0;
+}
+#header .subnav li:not(.active) .sub{
+    display:none;
+}
+#header .subnav .sub a{
+    font-size:14px; 
+    font-weight:400; 
+    color:#808080;
+}
+#header .subnav .sub a + a{
+    margin-left:15px;
+}
+/* 내용 */
+
+
+#contents {
+    padding: 1px;
+}
+
+#contents > div {
+    margin-top: 55px;
+}
+
+#contents > div > div > h2 {
+    font-size: 36px;
+    font-weight: 500;
+    color: #000;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+#contents > div:first-child {
+    margin-top: 0;
+}
+#contents {
+    padding: 1px 0 70px;
+}
+
+.sub:before {
+    content: '';
+    width: 496px;
+    height: 595px;
+    background: url(../sub_circle_01.png) no-repeat center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.time_list > li>ol>span {
+    display: block;
+    font-size: 20px;
+    font-weight: 550;
+    color:#1350b2;
+}
+.sub:after {
+    content: '';
+    width: 406px;
+    height: 406px;
+    background: url(../sub_circle_02.png) no-repeat center;
+    position: absolute;
+    bottom: 0;
+    right: 150px;
+}
+.sub {
+    background: #f5f6fa;
+    position: relative;
+}
+
+.sub .sub_con {
+    background: #fff;
+    -webkit-box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 30px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    padding: 60px 60px 70px;
+}
+.container {
+    max-width: 1280px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+
+.tit {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    padding-bottom: 15px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+
+.con_list > li > h4 {
+    color: #1d3d68;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.dot_list > li,
+.dot_list > dd {
+    margin-bottom: 8px;
+    padding-left: 9px;
+    line-height: 1.4;
+    word-break: keep-all;
+    position: relative;
+}
+
+.dot_list > li:before,
+.dot_list > dd:before {
+    content: '';
+    display: block;
+    width: 3px;
+    height: 3px;
+    background: #323a45;
+    border-radius: 50%;
+    position: absolute;
+    top: 9px;
+    left: 0;
+}
+
+.fn_blue {
+    color: #1350b2;
+}
+
+.fn_red {
+    color: #f20b1c !important;
+}
+
+
+body {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #555;
+    font-family: arial, 'GmarketSans', 'Noto Sans', 'sans-serif';
+}
+.tit:after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    position: absolute;
+    background: #55cfa0;
+    bottom: 0;
+    left: 0;
+}
+
+/* 푸터 */
+#footer {
+    background-color: #4d4d4d;
+    margin-top: 100px;
+    padding-bottom: 20px;
+}
+#footer.holder {
+    padding: 54px 40px;
+}
+#footer .fnav {
+    margin-top: 27px;
+    overflow: hidden;
+    text-align: center;
+    background-color: #3e3e3e;
+    border-radius: 4px;
+}
+#footer .fnav ul {
+    display: inline-block;
+    vertical-align: top;
+}
+#footer .fnav li {
+    float: left;
+}
+#footer .fnav a {
+    display: block;
+    line-height: 50px;
+    font-size: 16px;
+    color: #fff;
+}
+#footer .bottom {
+    margin-top: 26px;
+    padding-top: 32px;
+    color: #b3b3b3;
+    word-break: keep-all;
+    border-top: 2px solid #494949;
+}
+#footer .info {
+    line-height: 26px;
+    font-size: 15px;
+    padding-top: 16px;
+    color: #fff;
+}
+#footer .siteinfo {
+    margin-top: 37px;
+    color: #d9d9d9;
+    line-height: 26px;
+    font-size: 15px;
+}
+span.arrow {
+    position: relative;
+    background: url(https://www.shouse.garden/images/common/arrow02_r.png);
+    background-size: 100% 100%;
+    width: 6px;
+    height: 9px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 14px;
+}
+.fnav li {
+    margin-left: 28px;
+}
+

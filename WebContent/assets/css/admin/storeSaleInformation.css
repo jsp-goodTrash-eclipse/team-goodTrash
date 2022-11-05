@@ -1,0 +1,245 @@
+@charset 'utf-8';
+@import url("reset.css");
+@font-face {
+  font-family: newFont;
+  src: url("NaverNanumSquareNeo/TTF/NanumSquareNeo-dEb.ttf");
+}
+@font-face {
+  font-family: myFont;
+  src: url("/admin_login_main/font/Dongle/Dongle-Light.ttf");
+}
+@import url("https://hangeul.pstatic.net/hangeul_static/css/nanum-gothic-eco.css");
+/* body {
+  font-family: "Black Han Sans", sans-serif;
+  background-color: #353535;
+} */
+body {
+  font-family: "newFont";
+  /* background-color: #353535; */
+  background-color: #eeeeee;
+}
+a {
+  text-decoration: none;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+hr {
+  border: #575757 solid 1px;
+}
+
+.all_wrapper {
+  width: 100%;
+  display: flex;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0%;
+  padding-top: 30px;
+  text-align: center;
+  width: 15%;
+  background-color: #353535;
+  color: white;
+  height: 100%;
+}
+.logo {
+  font-size: 2em;
+}
+.go_to_site a {
+  color: #bdbdbd;
+  width: 60%;
+  margin: 0 auto;
+}
+.list_wrapper {
+  margin-top: 50px;
+  color: white;
+}
+details {
+  margin-bottom: 10px;
+  margin-left: 26%;
+  text-align: left;
+  width: 70%;
+}
+
+details summary {
+  padding: 0;
+  cursor: pointer;
+  margin-bottom: 10px;
+  display: flex;
+}
+summary div {
+  width: 80%;
+}
+details summary::marker {
+  font-size: 0;
+}
+details ul {
+  margin-top: 0%;
+  margin-bottom: 40px;
+}
+details ul li a {
+  display: block;
+}
+/* details ul li a::hover {
+    background: #333;
+    color: #fff;
+  } */
+
+li {
+  margin-top: 20px;
+  cursor: pointer;
+}
+main {
+  width: 85%;
+  background-color: #eeeeee;
+  margin-left: 15%;
+  padding-bottom: 50px;
+  height: fit-content;
+}
+main div {
+  background-color: #ffffff;
+  padding-top: 5px;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 30px;
+  padding: 10px 20px 10px 20px;
+  text-align: center;
+  color: #eeeeee;
+  font-family: "Black Han Sans", sans-serif;
+}
+button.button1 {
+  border: 1px solid#ffffff;
+  background-color: #fd6064;
+  margin-right: 0%;
+  margin-bottom: 15px;
+}
+button.button2 {
+  border: 1px solid#ffffff;
+  background-color: #acb8ca;
+  color: #353535;
+}
+div.main_header {
+  margin-bottom: 10px;
+  height: 4%;
+  text-align: right;
+}
+button {
+  font-family: inherit;
+}
+div.user_lookup_wrapper {
+  padding-left: 20px;
+}
+div.site_comming_route {
+  /* display: grid;
+  grid-template-columns: 80px 80px 80px; */
+  /* grid-template-rows: 50px; */
+  text-align: left;
+  font-size: 0.7em;
+  padding-bottom: 20px;
+  display: flex;
+}
+div.site_comming_route div {
+  margin-right: 10px;
+}
+
+/* 판매 관리 input table */
+
+table.search_input_table {
+  border: 1px #a39485 solid;
+  font-size: 0.9em;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+th {
+  text-align: left;
+}
+
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: #73685d;
+}
+
+td,
+th {
+  padding: 1em 0.5em;
+  vertical-align: middle;
+}
+
+td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+div.search_table_wrapper button {
+  color: #353535;
+  border: none;
+  border-radius: 7px;
+}
+input {
+  padding: 4px;
+}
+select {
+  padding: 4px;
+}
+
+/* 결과 테이블  */
+
+.sale_result_table_wrapper {
+  margin-top: 20px;
+}
+
+table.sale_result_table {
+  border-collapse: collapse;
+  text-align: left;
+  line-height: 1.5;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin: 20px 10px;
+}
+table.sale_result_table th {
+  width: 150px;
+  padding: 10px;
+  font-weight: bold;
+  vertical-align: top;
+}
+table.sale_result_table td {
+  width: 350px;
+  padding: 10px;
+  vertical-align: top;
+}
+table.sale_result_table .even {
+  background: #efefef;
+}
+.even td,
+.even th {
+  background: #efefef;
+}
+
+div.change_page {
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+div.change_page button {
+  color: #353535;
+  border-radius: 7px;
+  border: none;
+  margin-bottom: 50px;
+  width: fit-content;
+  height: fit-content;
+  padding: 0%;
+  background-color: transparent;
+  margin: 0%;
+}
