@@ -16,7 +16,7 @@
         <section>
             <div class="space"></div>
             <p class="home">
-                <img src="house.png" width="209px" height="50px">
+                <img src="${pageContext.request.contextPath}/assets/images/user/house.png" width="209px" height="50px">
             </p>
             <div class="main">
                 <form name="form" method="post" action="${pageContext.request.contextPath}/user/loginOk.user">
