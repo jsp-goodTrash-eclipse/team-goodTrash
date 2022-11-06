@@ -9,4 +9,8 @@ public class DriverDAO {
 	public DriverDAO() {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
+	
+	public boolean driverCheckEmail(String driverEmail) {
+		return (Integer)sqlSession.selectOne("driver.driverCheckEmail",driverEmail) == 0;
+	}
 }

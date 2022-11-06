@@ -59,7 +59,7 @@ function checkEmail(userEmail) {
 	})
 }
 
-/* 가입 이메일 중복 확인*/
+/* 가입 닉네임 중복 확인*/
 
 $("#userNickname").on("blur",function(){
 	checkNickname($(this).val());

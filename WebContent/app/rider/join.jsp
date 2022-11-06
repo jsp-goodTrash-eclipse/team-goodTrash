@@ -28,12 +28,13 @@
         <main>
             <form name="form" action="">
                 <div class="input_email_area input_box">
-                    <div class="input_title">이메일</div>
+                    <div class="input_title">이메일</div><span id = "emailResult"></span>
                     <input
                         type="text"
-                        name="email"
+                        name="driverEmail"
                         placeholder="이메일"
                         autocomplete="off"
+                        id = "driverEmail"
                     />
                     <div id="email_result"></div>
                 </div>
@@ -65,11 +66,12 @@
                 </div>
                 <div class="input_account_area input_box">
                     <div class="input_title">계좌정보</div>
-                    <input type="text" placeholder="은행명" />
+                    <input type="text" placeholder="은행명" name="driverAccountBank"/>
                     <input
                         type="text"
                         placeholder="계좌번호('-' 제외)"
                         class="input_bottom"
+                        name = "driverAccountNumber"
                     />
                 </div>
                 <div class="policy_area input_box">
@@ -139,6 +141,8 @@
             </form>
         </main>
 
-        <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/rider/join.js"></script>
+        
     </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/rider/join.js"></script>
 </html>
