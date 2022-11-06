@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>          
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,25 +48,6 @@
             </div>
             <div class="link_my">
             <ul>
-            	<c:choose>
-            		<c:when test="${empty sessionScope.userNumber}">
-            			 <li>
-                    		<a href="${pageContext.request.contextPath}/user/login.user" style="text-decoration: none;">로그인</a>
-               			 </li>
-			             <li>
-			             	<a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
-			             </li>
-            		</c:when>
-            		<c:otherwise>
-            			<li>
-                    		<a href="${pageContext.request.contextPath}/myPage/main.mp">마이페이지</a>
-               			</li>
-               			<li>
-                   			<a href="${pageContext.request.contextPath}/user/logout.user">로그아웃</a>
-               			</li>
-            		</c:otherwise>
-            	</c:choose>
-				<!--             	
                 <li>
                     <a href="" style="text-decoration: none;">로그인</a>
                 </li>
@@ -77,7 +57,6 @@
                 <li>
                     <a href="">마이페이지</a>
                 </li>
-                 -->
             </ul>
             </div>
         </div>
@@ -171,6 +150,25 @@
                             <div></div>
                         </td>
                     </tr>
+                    <c:choose>
+						<c:when>
+							<c:forEach var="board" items="${boards}">
+								<tr style="cursor: pointer;">
+									<td><c:out value="${board.getBoardNumber()}"/></td>
+									<td><c:out value="${board.getBoardTitle()}"/></td>
+									<td><c:out value="${board.getMemberId()}"/></td>
+									<td><c:out value="${board.getBoardDate()}"/></td>
+									<td><c:out value="${board.getBoardReadCount()}"/></td>
+									<td><c:out value="${board.getBoardReadCount()}"/></td>
+								</tr>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<tr>
+								<td colspan="6" align="center">등록된 게시물이 없습니다.</td>
+							</tr>
+						</c:otherwise>
+					</c:choose>
                 </tbody>
                </table>
             </div>

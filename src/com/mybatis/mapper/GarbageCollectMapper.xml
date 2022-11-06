@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="garbageCollect">
-   
+	
+	<select id="reservation" parameterType="garbageCollectVO">
+		insert into tbl_garbage_collect (garbage_collect_name, garbage_collect_phone_number, garbage_collect_zipcode, garbage_collect_address, garbage_collect_address_detail, garbage_collect_type, garbage_collect_box_count, garbage_collect_request_date, garbage_collect_memo, garbage_collect_status)
+		values(#{garbageCollectName}, #{garbageCollectPhoneNumber}, #{garbageCollectZipcode}, #{garbageCollectAddress}, #{garbageCollectAddressDetail}, #{garbageCollectType}, #{garbageCollectBoxCount}, #{garbageCollectRequestDate}, #{garbageCollectMemo}, #{garbageCollectStatus})
+	</select>
+	 
+	
+	<select id="historyList" parameterType="map" resultType="garbageCollectVO">
+		select garbage_collect_num, garbage_collect_request_date, garbage_collect_type, garbage_collect_name, garbage_collect_status
+		from tbl_garbage_collect
+		order by garbage_collect_num desc
+		limit #{startRow}, #{rowCount}
+	</select>
+	
+	<select id="getTotal" resultType="_int">
+		select count(garbage_collect_num) from tbl_garbage_collect
+	</select>
+	
+	<select id="select" parameterType="_int" resultType="garbageCollectVO">
+		select garbage_collect_num, garbage_collect_name, garbage_collect_phone_number, garbage_collect_zipcode, garbage_collect_address, garbage_collect_address_detail,  garbage_collect_type, garbage_collect_box_count, garbage_collect_request_date, garbage_collect_memo
+		from tbl_garbage_collect
+		where garbage_collect_num = #{garbageCollectNum}
+	</select>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_garbage_collect 
+		where garbage_collect_num = #{garbageCollectNum}
+	</delete>
+	
 </mapper>
+
+

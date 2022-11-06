@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>          
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,26 +48,7 @@
             </div>
             <div class="link_my">
             <ul>
-            	<c:choose>
-            		<c:when test="${empty sessionScope.userNumber}">
-            			 <li>
-                    		<a href="${pageContext.request.contextPath}/user/login.user" style="text-decoration: none;">로그인</a>
-               			 </li>
-			             <li>
-			             	<a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
-			             </li>
-            		</c:when>
-            		<c:otherwise>
-            			<li>
-                    		<a href="${pageContext.request.contextPath}/myPage/main.mp">마이페이지</a>
-               			</li>
-               			<li>
-                   			<a href="${pageContext.request.contextPath}/user/logout.user">로그아웃</a>
-               			</li>
-            		</c:otherwise>
-            	</c:choose>
-            	<!--  
-            	<li>
+                <li>
                     <a href="" style="text-decoration: none;">로그인</a>
                 </li>
                 <li>
@@ -77,7 +57,6 @@
                 <li>
                     <a href="">마이페이지</a>
                 </li>
-                -->
             </ul>
             </div>
         </div>
@@ -156,106 +135,171 @@
                 </ul>
             </div>
             <fieldset>
-                <table class="table">
-                    <tbody>
-                        <tr class="dot">
-                            <th scope="row">
-                                고객명
-                            </th>
-                            <td colspan="3">
-                                <div>
-                                    <div class="input">
-                                        <input type="text" name="name" title="고객명 입력" value>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="dot">
-                            <th scope="row">
-                                휴대전화
-                            </th>
-                            <td colspan="3">
-                                <div class="phone">
-                                    <div class="select">
-                                        <select name="phone_01" title="항목 선택">
-                                            <option value="010">010</option>
-                                            <option value="011">011</option>
-                                            <option value="016">016</option>
-                                            <option value="017">017</option>
-                                            <option value="018">018</option>
-                                        </select>
-                                    </div>
-                                    <span class="behind">-</span>
-                                    <div class="input">
-                                        <input type="text" class="numeric" name="phone_02" title="번호 입력" maxlength="4" value>
-                                    </div>
-                                    <span class="behind">-</span>
-                                    <div class="input">
-                                        <input type="text" class="numeric" name="phone_03" title="번호 입력" maxlength="4" value>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="dot">
-                            <th scope="row">
-                                주소
-                            </th>
-                            <td colspan="3">
-                                <div class="addr">
-                                    <div class="addr_detail">
-                                        <span>지역 선택</span>
-                                        <div class="input">
-                                            <div class="adr_sel">
-                                            <select name="choice_adr" title="지역 선택">
-                                                <option value="강남구">강남구</option>
-                                                <option value="강동구">강동구</option>
-                                                <option value="송파구">송파구</option>
-                                                <option value="광진구">광진구</option>
-                                                <option value="성동구">성동구</option>
-                                            </select>
-                                            </div>
-                                        </div>
-                                        <span>상세주소 입력</span>
-                                        <div class="input">
-                                            <input type="text" id="addr1" name="address" title="주소입력">
-                                        </div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr class="dot">
-                            <th scope="row">
-                                배출 희망일자
-                            </th>
-                            <td colspan="3">
-                                <div class="date">
-                                    <div class="date_input">
-                                        <label for="input_date">
-                                            <input type="date" name="data" title="날짜 선택" min="2022-01-01" max="2222-12-31" value>
-                                            <button type="button" class="input_date">
-                                                <span class="input_date"></span>
-                                            </button>
-                                        </label>
-                                    </div>
-                                </div>
-                                <span class="noti">예약 접수량이 많을 경우, 방문일정이 지연될 수 있습니다.</span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">메모</th>
-                            <td colspan="3">
-                                <div>
-                                    <textarea name="meno" title="메모 입력" maxlength="200"></textarea>
-                                    <span class="noti">※ 공백, -, /, (, ), @, ',', '.' 를 제외한 특수 문자는 입력 하실 수 없습니다.</span>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <div class="btn_box">
-                    <button type="button cancel_btn" onclick="alert('예약을 취소하였습니다.')">취소하기</button>
-                    <button type="button" class="btn">접수하기</button>
-                </div>
+            	<form method="post" action="${pageContext.request.contextPath}/garbageCollect/reservationOk.collect" name="reservationForm">
+	                <table class="table">
+	                    <tbody>
+	                        <tr class="dot">
+	                            <th scope="row">
+	                                고객명
+	                            </th>
+	                            <td colspan="3">
+	                                <div>
+	                                    <div class="input">
+	                                        <input type="text" name="garbageCollectName" title="고객명 입력" id="garbageCollectName">
+	                                    </div>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                        <tr class="dot">
+	                            <th scope="row">
+	                                휴대전화
+	                            </th>
+	                            <td colspan="3">
+	                                <div class="phone">
+	                                    <div class="input phonenumber_area" style="width: 250px;">
+	                                        <input type="tel" class="numeric" name="garbageCollectPhoneNumber" title="번호 입력" maxlength="13" id="garbageCollectPhoneNumber" pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}">
+	                                    </div>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                        <tr class="dot">
+	                            <th scope="row">
+	                                주소
+	                            </th>
+	                            <td colspan="3">
+	                                <div class="addr">
+	                                    <div class="addr_detail">
+	                                    	<span>우편번호</span>
+	                                        <div class="input">
+	                                            <input type="text" name="garbageCollectZipcode" title="우편번호 입력" id="garbageCollectZipcode">
+	                                            <input class="findButton" type="button" onclick="find()" value="우편번호 찾기">
+	                                        </div>
+	                                        <div class="input_addressDetail">
+	                                        <span>주소</span>
+	                                        <div class="input">
+	                                            <div class="adr_sel">
+	                                            <input type="text" name="garbageCollectAddress" title="주소입력" id="garbageCollectAddress">
+	                                            </div>
+	                                        </div>
+	                                        </div>
+	                                        <div class="input_addressDetail" style="display: inline-block;">
+	                                        <span class="addressDetail_area">상세주소 입력</span>
+	                                        <div class="input input_detail addressDetail_area">
+	                                            <input class="addressDetail_area" type="text" name="garbageCollectAddressDetail" title="주소입력" id="garbageCollectAddressDetail">
+	                                        </div>
+	                                        </div>
+	                                    </div>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                        <tr class="dot recycle_content">
+	                                <th scope="row">배출품목</th>
+	                                <td colspan="3">
+	                                    <div class="addr recycle_type">
+	                                        <div class="addr_detail recycle_type_detail">
+	                                        	<div class="type_area">
+		                                        <span>품목 선택</span>
+	                                            <div class="input">
+	                                                <div
+	                                                    class="adr_sel recycle_type_sel"
+	                                                >
+	                                                    <select
+	                                                        name="garbageCollectType"
+	                                                        title="품목 선택"
+	                                                        id="garbageCollectType"
+	                                                    >
+	                                                        <option value="종이류">
+	                                                            종이류
+	                                                        </option>
+	                                                        <option value="병류">
+	                                                            병류
+	                                                        </option>
+	                                                        <option value="캔류">
+	                                                            캔류
+	                                                        </option>
+	                                                        <option value="고철류">
+	                                                            고철류
+	                                                        </option>
+	                                                        <option value="의류">
+	                                                            의류
+	                                                        </option>
+	                                                        <option
+	                                                            value="플라스틱류"
+	                                                        >
+	                                                            플라스틱류
+	                                                        </option>
+	                                                    </select>
+	                                                </div>
+	                                            </div>
+	                                            </div>
+	                                            <div class="box_area">
+	                                            <span>박스 수량</span>
+	                                            <div class="input">
+	                                                <div
+	                                                    class="adr_sel recycle_type_sel"
+	                                                >
+	                                                    <select
+	                                                        name="garbageCollectBoxCount"
+	                                                        title="품목 선택"
+	                                                        id="garbageCollectBoxCount"
+	                                                    >
+	                                                        <option value="1box">
+	                                                            1box
+	                                                        </option>
+	                                                        <option value="2box">
+	                                                            2box
+	                                                        </option>
+	                                                        <option value="3box">
+	                                                            3box
+	                                                        </option>
+	                                                        <option value="4box">
+	                                                            4box
+	                                                        </option>
+	                                                        <option value="5box">
+	                                                            5box
+	                                                        </option>
+	                                                    </select>
+	                                                </div>
+	                                            </div>
+	                                            </div>
+	                                        </div>
+	                                    </div>
+	                                </td>
+	                            </tr>
+	                        <tr class="dot">
+	                            <th scope="row">
+	                                배출 희망일자
+	                            </th>
+	                            <td colspan="3">
+	                                <div class="date">
+	                                    <div class="date_input">
+	                                        <label for="input_date">
+	                                            <input type="date" name="garbageCollectRequestDate" title="날짜 선택" min="2022-01-01" max="2222-12-31" id="garbageCollectRequestDate">
+	                                            <button type="button" class="input_date">
+	                                                <span class="input_date"></span>
+	                                            </button>
+	                                        </label>
+	                                    </div>
+	                                </div>
+	                                <span class="noti">예약 접수량이 많을 경우, 방문일정이 지연될 수 있습니다.</span>
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <th scope="row">메모</th>
+	                            <td colspan="3">
+	                                <div>
+	                                    <textarea name="garbageCollectMemo" title="메모 입력" maxlength="200" id="garbageCollectMemo"></textarea>
+	                                    <span class="noti">※ 공백, -, /, (, ), @, ',', '.' 를 제외한 특수 문자는 입력 하실 수 없습니다.</span>
+	                                </div>
+	                            </td>
+	                        </tr>
+	                    </tbody>
+	                </table>
+	                <div class="btn_box">
+	                    <button type="button" onclick="location.href='${pageContext.request.contextPath}/garbageCollect/request.collect'">취소하기</button>
+	                    <button type="button" class="btn" onclick="send()">접수하기</button>
+	                </div>
+                </form>
             </fieldset>
         </div>
     </article>
@@ -332,5 +376,11 @@
         </div>
     </footer>   
 </body>
-<script src="reservation.js"></script>        
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/garbageCollect/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/garbageCollect/browser.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/garbageCollect/breakpoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/garbageCollect/util.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/garbageCollect/reservation.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>

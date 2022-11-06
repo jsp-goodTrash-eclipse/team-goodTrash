@@ -2,12 +2,13 @@
           HEADER
 --------------------------- */
 body {
-    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-family: "Spoqa Han Sans Neo", "sans-serif";
     position: relative;
     margin: 0 auto;
     padding: 0 auto;
 }
-ul, li {
+ul,
+li {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -54,7 +55,7 @@ div.link_my li {
     margin-left: 20px;
     padding-top: 7px;
 }
-div.link_my li a{
+div.link_my li a {
     text-decoration: none;
     color: #808080;
     font-size: 12px;
@@ -178,7 +179,6 @@ span.btn_search_icon {
 div.inner button {
     z-index: 100;
     position: absolute;
-    
 }
 div.search input {
     padding-top: 13px;
@@ -190,125 +190,10 @@ div.search input {
     background-color: transparent;
     box-sizing: content-box;
     border: none;
-} 
+}
 div.search button.btn_search {
     width: 34px;
     height: 26px;
     right: 5px;
     top: 0px;
-}
-
-/*------------------------------------ 
-                request 
---------------------------------------*/
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-article.request {
-    margin-bottom: 200px;
-}
-.request h3 {
-    margin: 100px;
-    margin-left: 0px;
-    margin-bottom: 20px;
-}
-table {
-    width: 100%;
-    text-align: center;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-.request_c table th {
-    border: 1px solid #ddd;
-    background: #f8f6f5;
-    padding: 15px;
-}
-.request_c table td {
-    border: 1px solid #ddd;
-    padding: 15px;
-}
-
-/* button */
-/* .btn_box {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0;
-}
-.btn_box button {
-    background: #009a3e;
-    color: #fff;
-    height: 50px;
-    min-width: 160px;
-    margin: 10px;
-}
-div.btn_box button.btn2 {
-    background: #f2f2f2;
-    color: #222;
-} */
-
-/*-------------------------
-          footer 
--------------------------
-*/
-#footer {
-    background-color: #4d4d4d;
-    margin-top: 100px;
-    padding-bottom: 20px;
-}
-#footer.holder {
-    padding: 54px 40px;
-}
-#footer .fnav {
-    margin-top: 27px;
-    overflow: hidden;
-    text-align: center;
-    background-color: #3e3e3e;
-    border-radius: 4px;
-}
-#footer .fnav ul {
-    display: inline-block;
-    vertical-align: top;
-}
-#footer .fnav li {
-    float: left;
-}
-#footer .fnav a {
-    display: block;
-    line-height: 50px;
-    font-size: 16px;
-    color: #fff;
-}
-#footer .bottom {
-    margin-top: 26px;
-    padding-top: 32px;
-    color: #b3b3b3;
-    word-break: keep-all;
-    border-top: 2px solid #494949;
-}
-#footer .info {
-    line-height: 26px;
-    font-size: 15px;
-    padding-top: 16px;
-    color: #fff;
-}
-#footer .siteinfo {
-    margin-top: 37px;
-    color: #d9d9d9;
-    line-height: 26px;
-    font-size: 15px;
-}
-span.arrow {
-    position: relative;
-    background: url(https://www.shouse.garden/images/common/arrow02_r.png);
-    background-size: 100% 100%;
-    width: 6px;
-    height: 9px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 14px;
-}
-.fnav li {
-    margin-left: 28px;
 }
