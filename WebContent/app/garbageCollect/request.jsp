@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>          
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,25 +50,7 @@
             </div>
             <div class="link_my">
             <ul>
-            	<c:choose>
-            		<c:when test="${empty sessionScope.userNumber}">
-            			 <li>
-                    		<a href="${pageContext.request.contextPath}/user/login.user" style="text-decoration: none;">로그인</a>
-               			 </li>
-			             <li>
-			             	<a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
-			             </li>
-            		</c:when>
-            		<c:otherwise>
-            			<li>
-                    		<a href="${pageContext.request.contextPath}/myPage/main.mp">마이페이지</a>
-               			</li>
-               			<li>
-                   			<a href="${pageContext.request.contextPath}/user/logout.user">로그아웃</a>
-               			</li>
-            		</c:otherwise>
-            	</c:choose>
-                <!-- <li>
+                <li>
                     <a href="" style="text-decoration: none;">로그인</a>
                 </li>
                 <li>
@@ -77,7 +58,7 @@
                 </li>
                 <li>
                     <a href="">마이페이지</a>
-                </li> -->
+                </li>
             </ul>
             </div>
         </div>
@@ -139,14 +120,14 @@
         <div class="holder">
             <h3 class="subtit">수거 신청</h3>
             <div class="request_cur">
-                <a href="" class="bg1">
+                <a href="${pageContext.request.contextPath}/garbageCollect/reservation.collect" class="bg1">
                     <p class="tit">예약 하기</p>
                     <p class="desc">친환경과 함께 해요</p>
                     <span class="sell">
                         <img src="https://15990903.or.kr/common/images/fav_05.png">
                     </span>
                 </a>
-                <a href="" class="bg1 bg2">
+                <a href="${pageContext.request.contextPath}/garbageCollect/history.collect" class="bg1 bg2">
                     <p class="tit">예약 조회</p>
                     <p class="desc">친환경과 함께 해요</p>
                     <span class="sell sell2">

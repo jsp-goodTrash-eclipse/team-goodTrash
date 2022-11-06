@@ -11,7 +11,7 @@
 		<typeAlias type="com.goodTrash.app.admin.vo.AdminVO" alias="AdminVO"/>
 		<typeAlias type="com.goodTrash.app.driver.vo.DriverVO" alias="DriverVO"/>
 		<typeAlias type="com.goodTrash.app.comment.vo.CommentVO" alias="CommentVO"/>
-		<typeAlias type="com.goodTrash.app.garbageCollect.vo.GarbageCollectVO" alias="GarbageCollectVO"/>
+		<typeAlias type="com.goodTrash.app.garbageCollect.vo.GarbageCollectVO" alias="garbageCollectVO"/>
 		<typeAlias type="com.goodTrash.app.inquiry.vo.InquiryVO" alias="InquiryVO"/>
 		<typeAlias type="com.goodTrash.app.notice.vo.NoticeVO" alias="NoticeVO"/>
 		<typeAlias type="com.goodTrash.app.order.vo.OrderVO" alias="OrderVO"/>

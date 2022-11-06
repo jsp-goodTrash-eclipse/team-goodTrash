@@ -1,6 +1,10 @@
 /*---------------------------
           HEADER
 --------------------------- */
+header {
+	width: 100%;
+}
+
 body {
     font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     position: relative;
@@ -219,15 +223,15 @@ fieldset, table, tbody, tr, td, th {
     width: 200px;
     margin-left: 70px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 16px;
 }
 select {
-    width: 130px;
+    width: 220px;
     padding: 5px;
     border: 1px solid #999;
     border-radius: 3px;
     height: 43px;
-    font-size: 18px;
+    font-size: 16px;
 }
 span.select_btn {
     background-image: url(https://15990903.or.kr/common/images/srh_icon.png);
@@ -297,10 +301,13 @@ table tr td {
     display: inline-flex;
     align-items: center;
 }
+
 input.numeric {
     margin: 10px;
-    width: 120px;
+    width: 200px;
+    margin-left: 70px;
 }
+
 textarea {
     height: 80px;
     border: 1px solid #ddd;
@@ -309,6 +316,29 @@ textarea {
     width: 700px;
 }
 
+div.input_addressDetail {
+	display: inline-block;
+	padding-top:10px;
+	padding-bottom: 5px;
+}
+
+.addressDetail_area {
+	margin-left: 0px !important;
+}
+
+.findButton {
+	margin-left: 0px !important;
+    width: 150px !important;
+    height: 50px !important;
+    padding-top: 0px !important;
+    font-size: 16px !important;
+    line-height: 50px;
+	cursor: pointer;
+}
+
+.input_detail {
+	margin-left: 0px !important;
+}
 /* 하단 버튼 */
 .btn_box {
     text-align: center;
@@ -328,6 +358,20 @@ textarea {
     background: #55cfa0;
     border-color: #55cfa0;
     color: #fff;
+}
+
+.recycle_type_detail {
+	display: inline-block;
+}
+
+.type_area {
+	display: inline-block;
+}
+
+
+.box_area {
+	display: inline-block;
+	margin-left: -70px;
 }
 
 
