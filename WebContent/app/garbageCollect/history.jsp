@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>         
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,25 +50,7 @@
             </div>
             <div class="link_my">
             <ul>
-				<c:choose>
-            		<c:when test="${empty sessionScope.userNumber}">
-            			 <li>
-                    		<a href="${pageContext.request.contextPath}/user/login.user" style="text-decoration: none;">로그인</a>
-               			 </li>
-			             <li>
-			             	<a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
-			             </li>
-            		</c:when>
-            		<c:otherwise>
-            			<li>
-                    		<a href="${pageContext.request.contextPath}/myPage/main.mp">마이페이지</a>
-               			</li>
-               			<li>
-                   			<a href="${pageContext.request.contextPath}/user/logout.user">로그아웃</a>
-               			</li>
-            		</c:otherwise>
-            	</c:choose>            
-               <!--  <li>
+                <li>
                     <a href="" style="text-decoration: none;">로그인</a>
                 </li>
                 <li>
@@ -75,7 +58,7 @@
                 </li>
                 <li>
                     <a href="">마이페이지</a>
-                </li> -->
+                </li>
             </ul>
             </div>
         </div>
@@ -148,7 +131,7 @@
                     <th scope="col">진행 상태</th>
                 </tr>
                 </thead>
-                <tbody>
+                <!-- <tbody>
                     <tr style="cursor: pointer;">
                         <td data-before="번호">
                             <div>1</div>
@@ -169,45 +152,59 @@
                             <div style="color: red;">수거완료</div>
                         </td>
                     </tr>
-                </tbody>
-               </table>
-            </div>
-            <div class="request_c">
-               <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">번호</th>
-                    <th scope="col">희망 배출일시</th>
-                    <th scope="col">예약 품목</th>
-                    <th scope="col">방문 예정일</th>
-                    <th scope="col">방문 담당자</th>
-                    <th scope="col">진행 상태</th>
-                </tr>
-                </thead>
+                </tbody> -->
                 <tbody>
-                    <tr style="cursor: pointer;">
-                        <td data-before="번호">
-                            <div>2</div>
-                        </td>
-                        <td data-before="희망 배출일시">
-                            <div>2022-10-14</div>
-                        </td>
-                        <td data-before="예약 품목">
-                            <div>옷</div>
-                        </td>
-                        <td data-before="방문 예정일">
-                            <div>2022-10-15</div>
-                        </td>
-                        <td data-before="방문 담당자">
-                            <div>박은지 기사님</div>
-                        </td>
-                        <td data-before="진행 상태">
-                            <div>수거취소</div>
-                        </td>
-                    </tr>
-                </tbody>
+					<c:choose>
+						<c:when test="${not empty historys and fn:length(historys) > 0}">
+							<c:forEach var="history" items="${historys}">
+								<tr>
+									<td>
+									<a href="${pageContext.request.contextPath}/garbageCollect/requestCheckDetail.collect?garbageCollectNum=${history.getGarbageCollectNum()}">
+									<c:out value="${history.getGarbageCollectNum()}"/>
+									</a>
+									</td>
+									<td><c:out value="${history.getGarbageCollectRequestDate()}"/></td>
+									<td><c:out value="${history.getGarbageCollectType()}"/></td>
+									<td><c:out value="${history.getGarbageCollectRequestDate()}"/></td>
+									<td><c:out value="${history.getGarbageCollectName()}"/></td>
+									<td><c:out value="${history.getGarbageCollectStatus()}"/></td>
+								</tr>
+							</c:forEach>
+						</c:when>
+						<c:otherwise>
+							<tr>
+								<td colspan="6" align="center">등록된 게시물이 없습니다.</td>
+									</tr>
+						</c:otherwise>
+					</c:choose>
+				</tbody>
                </table>
             </div>
+            <!-- 페이징 처리 -->
+			<table style="font-size:1rem; margin-top: 40px !important;">
+			<tr align="center" valign="middle">
+				<td class="web-view">
+					<c:if test="${prev}">
+						<a href="${pageContext.request.contextPath}/garbageCollect/history.collect?page=${startPage - 1}">&lt;</a>
+					</c:if>
+					<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<c:choose>
+							<c:when test="${not (i eq page)}">
+								<a href="${pageContext.request.contextPath}/garbageCollect/history.collect?page=${i}">
+									<c:out value="${i}"/>&nbsp;&nbsp;
+								</a>
+							</c:when>
+							<c:otherwise>
+									<c:out value="${i}"/>&nbsp;&nbsp;
+							</c:otherwise>
+						</c:choose>
+					</c:forEach>
+					<c:if test="${next}"> 
+						<a href="${pageContext.request.contextPath}/garbageCollect/history.collect?page=${endPage + 1}">&gt;</a>
+					</c:if>
+				</td>
+			</tr>
+		</table>
            <!--  <div class="btn_box">
                 <button type="button" class="btn">취소하기</button>
                 <button type="button" class="btn btn2">수정하기</button>
