@@ -40,6 +40,8 @@ public class DriverFrontController extends HttpServlet{
 			result = new DriverCheckEmail().execute(req,resp);
 			
 		}else if(target.equals("/driver/login.driver")) {
+			result = new Result();
+			result.setPath("/app/rider/login.jsp");
 			
 		}else if(target.equals("/driver/loginOk.driver")) {
 			
