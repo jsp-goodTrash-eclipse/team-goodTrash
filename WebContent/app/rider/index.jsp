@@ -30,10 +30,10 @@
                 </div>
                 <!--로그인/회원가입 버튼-->
                 <div class="button_area">
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}">
                         <button class="login_button">로그인</button>
                     </a>
-                    <a href="">
+                    <a href="${pageContext.request.contextPath}/driver/join.driver">
                         <button class="join_button">회원가입</button>
                     </a>
                 </div>

@@ -34,6 +34,10 @@ public class DriverFrontController extends HttpServlet{
 			result.setPath("/app/rider/join.jsp");
 		
 		}else if(target.equals("/driver/joinOk.driver")) {
+			result = new DriverJoinOkController().execute(req,resp);
+			
+		}else if(target.equals("/driver/driverCheckEmail.driver")) {
+			result = new DriverCheckEmail().execute(req,resp);
 			
 		}else if(target.equals("/driver/login.driver")) {
 			
