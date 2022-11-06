@@ -144,7 +144,7 @@
             <div class="holder ctg">
                 <ul class="category_icon">
                     <li>
-                        <a href="">
+                        <a href="${pageContext.request.contextPath}/garbageCollect/request.collect">
                             <span class="icon">
                                 <img src="https://shop.shouse.garden/data/categoryimage/event_view_banner_221007154056.jpg">
                             </span>

@@ -1,6 +1,6 @@
 package com.goodTrash.app.garbageCollect.vo;
 
-public class GarbageCollectVO {
+public class GarbageCollectDTO {
 	
 	private int garbageCollectNum;
 	private String garbageCollectName;
@@ -17,9 +17,7 @@ public class GarbageCollectVO {
 	private int driverNumber;
 	private int UserNumber;
 	
-	public GarbageCollectVO() {;}
-	
-	
+	public GarbageCollectDTO() {;}
 
 	public int getGarbageCollectNum() {
 		return garbageCollectNum;
@@ -92,7 +90,7 @@ public class GarbageCollectVO {
 	public void setGarbageCollectRequestDate(String garbageCollectRequestDate) {
 		this.garbageCollectRequestDate = garbageCollectRequestDate;
 	}
-	
+
 	public String getGarbageCollectResponseDate() {
 		return garbageCollectResponseDate;
 	}
@@ -108,7 +106,7 @@ public class GarbageCollectVO {
 	public void setGarbageCollectMemo(String garbageCollectMemo) {
 		this.garbageCollectMemo = garbageCollectMemo;
 	}
-	
+
 	public String getGarbageCollectStatus() {
 		return garbageCollectStatus;
 	}
@@ -133,15 +131,13 @@ public class GarbageCollectVO {
 		UserNumber = userNumber;
 	}
 
-
-
 	@Override
 	public String toString() {
-		return "GarbageCollectVO [garbageCollectNum=" + garbageCollectNum + ", garbageCollectName=" + garbageCollectName
-				+ ", garbageCollectPhoneNumber=" + garbageCollectPhoneNumber + ", garbageCollectZipcode="
-				+ garbageCollectZipcode + ", garbageCollectAddress=" + garbageCollectAddress
-				+ ", garbageCollectAddressDetail=" + garbageCollectAddressDetail + ", garbageCollectType="
-				+ garbageCollectType + ", garbageCollectBoxCount=" + garbageCollectBoxCount
+		return "GarbageCollectDTO [garbageCollectNum=" + garbageCollectNum + ", garbageCollectName="
+				+ garbageCollectName + ", garbageCollectPhoneNumber=" + garbageCollectPhoneNumber
+				+ ", garbageCollectZipcode=" + garbageCollectZipcode + ", garbageCollectAddress="
+				+ garbageCollectAddress + ", garbageCollectAddressDetail=" + garbageCollectAddressDetail
+				+ ", garbageCollectType=" + garbageCollectType + ", garbageCollectBoxCount=" + garbageCollectBoxCount
 				+ ", garbageCollectRequestDate=" + garbageCollectRequestDate + ", garbageCollectResponseDate="
 				+ garbageCollectResponseDate + ", garbageCollectMemo=" + garbageCollectMemo + ", garbageCollectStatus="
 				+ garbageCollectStatus + ", driverNumber=" + driverNumber + ", UserNumber=" + UserNumber + "]";

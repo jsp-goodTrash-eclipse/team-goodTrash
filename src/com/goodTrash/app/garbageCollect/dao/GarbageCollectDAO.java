@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 
+import com.goodTrash.app.garbageCollect.vo.GarbageCollectDTO;
 import com.goodTrash.app.garbageCollect.vo.GarbageCollectVO;
 import com.mybatis.config.MyBatisConfig;
 
@@ -16,19 +17,19 @@ public class GarbageCollectDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public void reservation(GarbageCollectVO garbageCollectVO) {
-		sqlSession.insert("garbageCollect.reservation", garbageCollectVO);
+	public void reservation(GarbageCollectDTO garbageCollectDTO) {
+		sqlSession.insert("garbageCollect.reservation", garbageCollectDTO);
 	}
 	
-	public List<GarbageCollectVO> historyList(HashMap<String, Integer> pageMap) {
+	public List<GarbageCollectDTO> historyList(HashMap<String, Integer> pageMap) {
 		return sqlSession.selectList("garbageCollect.historyList", pageMap);
 	}
 	
-	public int getTotal() {
-		return sqlSession.selectOne("garbageCollect.getTotal"); 
+	public int getTotal(int userNumber) {
+		return sqlSession.selectOne("garbageCollect.getTotal", userNumber); 
 	}
 	
-	public GarbageCollectVO select(int garbageCollectNum) {
+	public GarbageCollectDTO select(int garbageCollectNum) {
 		return sqlSession.selectOne("garbageCollect.select", garbageCollectNum);
 	}
 	
