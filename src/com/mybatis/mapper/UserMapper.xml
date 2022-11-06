@@ -21,4 +21,8 @@
    		where user_email = #{userEmail} and user_password = #{userPassword}
    </select>
    
+   <select id="getUserNumber" parameterType="_int" resultType="_int">
+   		select user_number from tbl_user where user_number = #{userNumber}
+   </select>
+   
 </mapper>

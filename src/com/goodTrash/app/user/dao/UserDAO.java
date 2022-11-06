@@ -21,7 +21,7 @@ public class UserDAO {
 	// 닉네임 중복 체크
 	public boolean checkNickname(String userNickname) {
 		return (Integer)sqlSession.selectOne("user.checkNickname",userNickname) == 0;
-		
+		 
 	}
 	
 	public void join(UserVO userVO) {
@@ -30,6 +30,10 @@ public class UserDAO {
 	
 	public int login(UserVO userVO) {
 		return sqlSession.selectOne("user.login",userVO);
+	}
+	
+	public int getUserNumber(int userNumber) {
+		return sqlSession.selectOne("user.getUserNumber", userNumber);
 	}
 	
 
