@@ -25,8 +25,14 @@ public class DriverFrontController extends HttpServlet{
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 		Result result = null;
 		
-		if(target.equals("/driver/join.driver")) {
+		if(target.equals("/goodTrash/driver.driver")) {
+			result = new Result();
+			result.setPath("/app/rider/index.jsp");
 			
+		}else if(target.equals("/driver/join.driver")) {
+			result = new Result();
+			result.setPath("/app/rider/join.jsp");
+		
 		}else if(target.equals("/driver/joinOk.driver")) {
 			
 		}else if(target.equals("/driver/login.driver")) {
@@ -37,12 +43,12 @@ public class DriverFrontController extends HttpServlet{
 			
 		}
 		
-//		if(result != null) {
-//			if(result.isRedirect()) {
-//				resp.sendRedirect(result.getPath());
-//			}else {
-//				req.getRequestDispatcher(result.getPath()).forward(req, resp);
-//			}
-//		}
+		if(result != null) {
+			if(result.isRedirect()) {
+				resp.sendRedirect(result.getPath());
+			}else {
+				req.getRequestDispatcher(result.getPath()).forward(req, resp);
+			}
+		}
 	}
 }
