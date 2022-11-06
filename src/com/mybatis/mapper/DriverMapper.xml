@@ -5,5 +5,11 @@
 	<select id="driverCheckEmail" parameterType="string" resultType="_int">
 		select count(driver_email) from tbl_driver where driver_email = #{driverEmail}
 	</select>
+	
+	<insert id="driverJoin" parameterType="DriverVO">
+		insert into tbl_driver
+		(driver_email , driver_password , driver_area , driver_account_bank , driver_account_number)
+		values(#{driverEmail},#{driverPassword},#{driverArea},#{driverAccountBank},#{driverAccountNumber})
+	</insert>
    
 </mapper>
