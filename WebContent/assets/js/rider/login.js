@@ -6,11 +6,13 @@ function loginCheck() {
     if (!email.value) {
         alert("이메일을 입력해 주세요.");
 		return;
-    }else{
-     /* 비밀번호 입력 경고 창 */
-     	if (!pw.value) {
-     		alert("비밀번호를 입력해 주세요.");
-    	}
+    }
+	/*비밀번호 입력 경고*/
+	if (!pw.value){
+		alert("비밀번호를 입력해 주세요.");
+		return;
 	}
 	form.submit();
+	
+	
 }
