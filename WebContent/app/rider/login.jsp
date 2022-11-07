@@ -31,7 +31,7 @@
         </header>
         <main>
             <!--input-->
-            <form class="input_area" id = "inputForm" name="form" action="${pageContext.request.contextPath}/driver/loginOk.driver">
+            <form class="input_area" method="get" id = "inputForm" name="form" action="${pageContext.request.contextPath}/driver/loginOk.driver">
                 <input type="text" name="email" placeholder="이메일" />
                 <input
                     type="password"
@@ -39,7 +39,7 @@
                     placeholder="비밀번호 8자 이상"
                     id="input_pw"
                 />
-            </form>
+            <!-- </form> -->
             <!--이메일저장 & 비밀번호 재설정-->
             <div class="login_option_area">
                 <div class="remember_id">
@@ -51,11 +51,12 @@
                 </div>
             </div>
             <!--로그인버튼-->
-            <a href="">
-                <button class="login_button" form="inputForm" onclick="loginCheck()">
+            
+                <button class="login_button" type="button" onclick="loginCheck()">
                     로그인
                 </button>
-            </a>
+            
+            </form>
             <!--회원가입 안내-->
             <div class="inform_join_area">
                 <p>
