@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
 <mapper namespace="inquiry">
+	<select id="selectAll" resultType="InquiryDTO">
+		select inquiry_number, inquiry_type, inquiry_date, inquiry_detail, inquiry_img, u.user_number, user_id
+		from tbl_user u join tbl_inquiry i
+		on u.user_number = i.user_number
+	</select>
+	
+	<insert id="insert" parameterType = "InquiryVO">
+		insert into tbl_inquiry(inquiry_type, inquiry_number, user_number)
+		values (#{inquiryType}, #{inquiryNumber},#{userNumber} )
+	</insert>
+	
+	<delete id="delete" parameterType="_int">
+		delete from tbl_inquiry
+		where inquiry_number = #{inquiryNumber}
+	</delete>
+	
+	
    
 </mapper>

@@ -1,6 +1,10 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.text.SimpleDateFormat" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,24 +53,15 @@
             </div>
             <div class="link_my">
             <ul>
-            	<c:choose>
-            		<c:when test="${empty sessionScope.userNumber}">
-            			 <li>
-                    		<a href="${pageContext.request.contextPath}/user/login.user" style="text-decoration: none;">로그인</a>
-               			 </li>
-			             <li>
-			             	<a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
-			             </li>
-            		</c:when>
-            		<c:otherwise>
-            			<li>
-                    		<a href="${pageContext.request.contextPath}/myPage/main.mp">마이페이지</a>
-               			</li>
-               			<li>
-                   			<a href="${pageContext.request.contextPath}/user/logout.user">로그아웃</a>
-               			</li>
-            		</c:otherwise>
-            	</c:choose>
+                <li>
+                    <a href="" style="text-decoration: none;">로그인</a>
+                </li>
+                <li>
+                    <a href="">회원가입</a>
+                </li>
+                <li>
+                    <a href="">마이페이지</a>
+                </li>
             </ul>
             </div>
         </div>
@@ -132,10 +127,10 @@
                   <button type="button" data-action="slide" class="btn_arrow"></button>
                 </summary>
                 <ul>
-                  <li class="sub_menu"><a href="#">상세정보</a></li>
+                  <li class="sub_menu"><a href="${pageContext.request.contextPath}/app/garbageCollect/history.jsp">상세정보</a></li>
                 </ul>
               </details>
-              <details>
+              <!-- <details>
                 <summary>
                   내 정보관리
                   <button type="button" data-action="slide" class="btn_arrow btn_arrow2"></button>
@@ -145,8 +140,8 @@
                   <li class="sub_menu"><a href="#">로그아웃</a></li>
                   <li class="sub_menu"><a href="#">회원탈퇴</a></li>
                 </ul>
-              </details>
-              <details>
+              </details> -->
+             <!--  <details>
                 <summary>
                   내 포인트
                   <button type="button" data-action="slide" class="btn_arrow"></button>
@@ -155,19 +150,30 @@
                   <li class="sub_menu"><a href="#">출금하기</a></li>
                   <li class="sub_menu"><a href="#">포인트조회</a></li>
                 </ul>
-              </details>
+              </details> -->
               <details>
                 <summary>
                   1대 1문의
                   <button type="button" data-action="slide" class="btn_arrow"></button>
                 </summary>
                 <ul>
-                  <li class="sub_menu"><a href="#">내 문의내역</a></li>
-                  <li class="sub_menu"><a href="#">문의답변</a></li>
+                  <li class="sub_menu"><a href="${pageContext.request.contextPath}/app/myPage/inquiry.jsp">내 문의내역</a></li>
+                  <!-- <li class="sub_menu"><a href="#">문의답변</a></li> -->
                 </ul>
                 </details>
             </div>
             <div class="mycon">
+            <%
+            Class.forName("com.mysql.jdbc.Driver");
+            String dbUrl="jdbc:mysql://localhost:3306/recycle_project";
+            String dbUser = "root";
+            String dbPass = "1234";
+            Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+            String sql = "select*from tbl_user;";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery(sql);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+            %>
                 <div class="myprofile">
                     <div class="thumbs" id="photo" style="background-image: url(https://www.shouse.garden/data/profile/profile.jpg);">
                         <button type="button" class="btn_profile"></button>
@@ -176,13 +182,22 @@
                         <span class="lv gg"></span>
                     </p>
                     <div class="relative tgwrp">
+                    <%
+            			if(rs.next()){
+           			 %>
                         <div>
-                            <p class="txt" id="introducion">한 줄 소개글을 작성해주세요.</p>
+                        	<p class="userName" id="userName" style="text-align: center; margin-bottom: 0;">
+                        	 <%=rs.getString("user_name")%> 
+                        	 
+                        	 님
+                        	</p>
+                            <p class="txt" id="introducion" style="margin-top: 5px; margin-left: 111px;">환영합니다.</p>
                             <button type="button" data-action="fade" class="btn_tg">작성</button>
                         </div>
+                        <%} %>
                     </div>
                     <div class="sns_list">
-                        <div class="item">
+                        <div class="item" style="margin-top: 20px">
                             <button type="button" data-action="fade" class="sns sns1">인스타그램 주소 작성</button>
                         </div>
                         <div class="item">
@@ -195,9 +210,12 @@
                     <ul class="clearfix">
                         <li>
                             <strong>
-                                <a href="">0</a>
+                                <a href="">
+                                1
+                                <%-- <%=rs.getString("basket_product_count")%>  --%>
+                                </a>
                             </strong>
-                            <a href="">게시물</a>
+                            <a href="">장바구니</a>
                         </li> 
                         <li>
                             <strong>
@@ -243,7 +261,9 @@
                             <div class="point_box">
                             <span class="icon"></span>
                             <span class="txt">내 포인트</span>
-                            <span class="point">0</span>
+                            <span class="point">
+                            <%=rs.getString("user_rejected_point")%> 
+                            </span>
                             <button type="button" class="point_btn" value="출금">출금</button>
                             </div>    
                         </a>
@@ -328,7 +348,8 @@
     </footer>
 </body>
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="mypage.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/myPage/myPage.js"></script>
+
 <script>
    
 </script>

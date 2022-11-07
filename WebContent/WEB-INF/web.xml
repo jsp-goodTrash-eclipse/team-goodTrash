@@ -72,7 +72,7 @@
     <!-- MyPage FrontController Mapping -->
   <servlet>
      <servlet-name>MyPage</servlet-name>
-     <servlet-class>com.goodTrash.app.myPage.MyPageFrontcontroller</servlet-class>
+     <servlet-class>com.goodTrash.app.myPage.MyPageFrontController</servlet-class>
   </servlet>
   
   <servlet-mapping>
