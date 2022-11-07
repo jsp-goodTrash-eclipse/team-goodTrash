@@ -17,23 +17,28 @@ public class GarbageCollectDAO {
 		sqlSession = MyBatisConfig.getSqlSessionFactory().openSession(true);
 	}
 	
-	public void reservation(GarbageCollectDTO garbageCollectDTO) {
-		sqlSession.insert("garbageCollect.reservation", garbageCollectDTO);
+	public void reservation(GarbageCollectVO garbageCollectVO) {
+		sqlSession.insert("garbageCollect.reservation", garbageCollectVO);
 	}
 	
-	public List<GarbageCollectDTO> historyList(HashMap<String, Integer> pageMap) {
+	public List<GarbageCollectVO> historyList(HashMap<String, Integer> pageMap) {
 		return sqlSession.selectList("garbageCollect.historyList", pageMap);
 	}
 	
-	public int getTotal(int userNumber) {
-		return sqlSession.selectOne("garbageCollect.getTotal", userNumber); 
+	public int getTotal() {
+		return sqlSession.selectOne("garbageCollect.getTotal"); 
 	}
 	
-	public GarbageCollectDTO select(int garbageCollectNum) {
+	public GarbageCollectVO select(int garbageCollectNum) {
 		return sqlSession.selectOne("garbageCollect.select", garbageCollectNum);
 	}
 	
 	public void delete(int garbageCollectNum) {
 		sqlSession.delete("garbageCollect.delete", garbageCollectNum);
 	}
+	
+	public List<GarbageCollectVO> list(int userNumber) {
+		return sqlSession.selectOne("garbageCollect.list", userNumber);
+	}
+
 }

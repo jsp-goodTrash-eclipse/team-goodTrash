@@ -2,27 +2,25 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="garbageCollect">
 	
-	<select id="reservation" parameterType="garbageCollectDTO">
+	<select id="reservation" parameterType="garbageCollectVO">
 		insert into tbl_garbage_collect (garbage_collect_name, garbage_collect_phone_number, garbage_collect_zipcode, garbage_collect_address, garbage_collect_address_detail, garbage_collect_type, garbage_collect_box_count, garbage_collect_request_date, garbage_collect_memo, garbage_collect_status, user_number)
 		values(#{garbageCollectName}, #{garbageCollectPhoneNumber}, #{garbageCollectZipcode}, #{garbageCollectAddress}, #{garbageCollectAddressDetail}, #{garbageCollectType}, #{garbageCollectBoxCount}, #{garbageCollectRequestDate}, #{garbageCollectMemo}, #{garbageCollectStatus}, #{userNumber})
 	</select>
 	 
 	
-	<select id="historyList" parameterType="map" resultType="garbageCollectDTO">
-		select garbage_collect_num, garbage_collect_request_date, garbage_collect_type, garbage_collect_name, garbage_collect_status
-		from tbl_user u join tbl_garbage_collect gc 
-		on u.user_number = gc.user_number
+	<select id="historyList" parameterType="map" resultType="garbageCollectVO">
+		select garbage_collect_num, garbage_collect_request_date, garbage_collect_type, garbage_collect_name, garbage_collect_status, gc.user_number
+		from tbl_garbage_collect gc
+		where gc.user_number = #{userNumber}
 		order by garbage_collect_num desc
 		limit #{startRow}, #{rowCount}
 	</select>
 	
-	<select id="getTotal" parameterType="_int" resultType="_int">
-		select count(garbage_collect_num) from tbl_user u join tbl_garbage_collect gc
-		where u.user_number = gc.user_number
-		
+	<select id="getTotal" resultType="_int">
+		select count(garbage_collect_num) from tbl_garbage_collect
 	</select>
 	
-	<select id="select" parameterType="_int" resultType="garbageCollectDTO">
+	<select id="select" parameterType="_int" resultType="garbageCollectVO">
 		select garbage_collect_num, garbage_collect_name, garbage_collect_phone_number, garbage_collect_zipcode, garbage_collect_address, garbage_collect_address_detail,  garbage_collect_type, garbage_collect_box_count, garbage_collect_request_date, garbage_collect_memo
 		from tbl_garbage_collect
 		where garbage_collect_num = #{garbageCollectNum}
@@ -32,7 +30,7 @@
 		delete from tbl_garbage_collect 
 		where garbage_collect_num = #{garbageCollectNum}
 	</delete>
-	
+
 </mapper>
 
 

@@ -15,7 +15,7 @@ public class GarbageCollectVO {
 	private String garbageCollectMemo;
 	private String garbageCollectStatus;
 	private int driverNumber;
-	private int UserNumber;
+	private int userNumber;
 	
 	public GarbageCollectVO() {;}
 	
@@ -126,13 +126,12 @@ public class GarbageCollectVO {
 	}
 
 	public int getUserNumber() {
-		return UserNumber;
+		return userNumber;
 	}
 
 	public void setUserNumber(int userNumber) {
-		UserNumber = userNumber;
+		this.userNumber = userNumber;
 	}
-
 
 
 	@Override
@@ -144,7 +143,7 @@ public class GarbageCollectVO {
 				+ garbageCollectType + ", garbageCollectBoxCount=" + garbageCollectBoxCount
 				+ ", garbageCollectRequestDate=" + garbageCollectRequestDate + ", garbageCollectResponseDate="
 				+ garbageCollectResponseDate + ", garbageCollectMemo=" + garbageCollectMemo + ", garbageCollectStatus="
-				+ garbageCollectStatus + ", driverNumber=" + driverNumber + ", UserNumber=" + UserNumber + "]";
+				+ garbageCollectStatus + ", driverNumber=" + driverNumber + ", userNumber=" + userNumber + "]";
 	}
 
 }
