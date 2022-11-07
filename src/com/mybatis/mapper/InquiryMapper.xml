@@ -3,11 +3,11 @@
 
 
 <mapper namespace="inquiry">
-	<select id="selectAll" resultType="InquiryDTO">
+<!-- 	<select id="selectAll" resultType="InquiryDTO">
 		select inquiry_number, inquiry_type, inquiry_date, inquiry_detail, inquiry_img, u.user_number, user_id
 		from tbl_user u join tbl_inquiry i
 		on u.user_number = i.user_number
-	</select>
+	</select> -->
 	
 	<insert id="insert" parameterType = "InquiryVO">
 		insert into tbl_inquiry(inquiry_type, inquiry_number, user_number)
