@@ -30,7 +30,7 @@
                 </div>
                 <!--로그인/회원가입 버튼-->
                 <div class="button_area">
-                    <a href="${pageContext.request.contextPath}">
+                    <a href="${pageContext.request.contextPath}/driver/login.driver">
                         <button class="login_button">로그인</button>
                     </a>
                     <a href="${pageContext.request.contextPath}/driver/join.driver">
@@ -38,7 +38,7 @@
                     </a>
                 </div>
                 <!--공홈으로 이동-->
-                <a href="https://www.shouse.garden/main/main.html">
+                <a href="${pageContext.request.contextPath}/user/mainPage.user">
                     <div class="move_home">공식 홈페이지로 이동</div>
                 </a>
             </main>

@@ -9,7 +9,7 @@ public class DriverVO {
 	private String driverEmail;
 	private int driverStatus;
 	private String driverAccountNumber;
-	private String driverBank;
+	private String driverAccountBank;
 	private String driverArea;
 	
 	
@@ -64,11 +64,11 @@ public class DriverVO {
 	public void setDriverAccountNumber(String driverAccountNumber) {
 		this.driverAccountNumber = driverAccountNumber;
 	}
-	public String getDriverBank() {
-		return driverBank;
+	public String getDriverAccountBank() {
+		return driverAccountBank;
 	}
-	public void setDriverBank(String driverBank) {
-		this.driverBank = driverBank;
+	public void setDriverAccountBank(String driverBank) {
+		this.driverAccountBank = driverBank;
 	}
 	public String getDriverArea() {
 		return driverArea;
@@ -81,7 +81,7 @@ public class DriverVO {
 		return "DriverVO [driverId=" + driverId + ", driverNumber=" + driverNumber + ", driverPassword="
 				+ driverPassword + ", driverPhoneNumber=" + driverPhoneNumber + ", driverName=" + driverName
 				+ ", driverEmail=" + driverEmail + ", driverStatus=" + driverStatus + ", driverAccountNumber="
-				+ driverAccountNumber + ", driverBank=" + driverBank + ", driverArea=" + driverArea + "]";
+				+ driverAccountNumber + ", driverAccountBank=" + driverAccountBank + ", driverArea=" + driverArea + "]";
 	}
 	
 	

@@ -11,5 +11,12 @@
 		(driver_email , driver_password , driver_area , driver_account_bank , driver_account_number)
 		values(#{driverEmail},#{driverPassword},#{driverArea},#{driverAccountBank},#{driverAccountNumber})
 	</insert>
+	
+	<select id="driverLogin" parameterType="DriverVO" resultType="_int">
+		select driver_number from tbl_driver
+		where driver_email = #{driverEmail} and driver_password = #{driverPasswod}
+	</select>
+	
+	
    
 </mapper>

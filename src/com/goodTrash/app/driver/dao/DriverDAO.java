@@ -18,4 +18,12 @@ public class DriverDAO {
 	public void driverJoin(DriverVO driverVO) {
 		sqlSession.insert("driver.driverJoin",driverVO);
 	}
+	
+	public int driverLogin(DriverVO driverVO) {
+		System.out.println("DAO 들어옴");
+		System.out.println(driverVO.getDriverEmail());
+		System.out.println(driverVO.getDriverPassword());
+		System.out.println(sqlSession.selectOne("driver.driverLogin",driverVO));
+		return (Integer)sqlSession.selectOne("driver.driverLogin",driverVO);
+	}
 }

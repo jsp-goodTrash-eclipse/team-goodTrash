@@ -1,3 +1,7 @@
+const button = document.getElementsByClassName("join_button");
+
+button.disabled = true;
+
 /* 이메일 형식 검사 */
 
 /* 
@@ -32,7 +36,8 @@ input.addEventListener("blur", function () {
  */
 
 /* 비밀번호 8글자 이상 */
-/*
+
+let passwordLengthCheckAfter = false;
 const pwInput = form.password;
 const pwDiv = document.getElementById("pw_result");
 pwInput.addEventListener("blur", function () {
@@ -42,9 +47,11 @@ pwInput.addEventListener("blur", function () {
         pwDiv.style.fontSize = "14px";
     } else {
         pwDiv.innerHTML = "";
+		passwordLengthCheckAfter = true;
+
     }
 });
- */
+ 
 
 /* 비밀번호 확인 */
 const pwCheck = form.passwordCheck;
@@ -58,7 +65,8 @@ pwCheck.addEventListener("blur", function () {
         pwCheckDiv.style.fontSize = "14px";
     } else {
         pwCheckDiv.innerHTML = "";
-		checkPasswordAfter = true;
+		checkPasswordSameAfter = true;
+		checkCheck();
     }
 });
 
@@ -111,8 +119,13 @@ function driverCheckEmail(driverEmail){
 
 /* 체크를 체크하는 function */
 function checkCheck(){
-	if(checkEmailAfter==true && checkPasswordAfter==true){
+	if(checkEmailAfter==true && checkPasswordSameAfter==true &&passwordLengthCheckAfter==ture){
 		button.disabled = false;
 	}
 }
+
+function activeButton(){
+	form.submit();
+}
+
 

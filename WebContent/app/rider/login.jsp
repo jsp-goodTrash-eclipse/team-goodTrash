@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,9 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/rider/reset.css" />
         <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/rider/login.css" />
     </head>
+    <c:if test="${not empty param.driverLogin}">
+		<script>alert("로그인 실패");</script>
+	</c:if>
     <body>
         <header>
             <!--뒤로가기 & 로그인 헤더-->
@@ -27,7 +31,7 @@
         </header>
         <main>
             <!--input-->
-            <form class="input_area" name="form">
+            <form class="input_area" id = "inputForm" name="form" action="${pageContext.request.contextPath}/driver/loginOk.driver">
                 <input type="text" name="email" placeholder="이메일" />
                 <input
                     type="password"
@@ -48,7 +52,7 @@
             </div>
             <!--로그인버튼-->
             <a href="">
-                <button class="login_button" onclick="loginCheck()">
+                <button class="login_button" form="inputForm" onclick="loginCheck()">
                     로그인
                 </button>
             </a>
@@ -56,11 +60,11 @@
             <div class="inform_join_area">
                 <p>
                     혹시 우수 쓰레기가 처음이신가요?
-                    <a class="join_link" href="join.html">회원가입</a>
+                    <a class="join_link" href="${pageContext.request.contextPath}/driver/join.driver">회원가입</a>
                 </p>
             </div>
         </main>
     </body>
 
-    <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/driver/login.js"></script>
+    <script type="text/javascript" src="${pageContext.request.contextPath}/assets/js/rider/login.js"></script>
 </html>
