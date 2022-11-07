@@ -26,7 +26,7 @@
             </div>
         </header>
         <main>
-            <form name="form" action="">
+            <form name="form" action="${pageContext.request.contextPath}/driver/joinOk.driver">
                 <div class="input_email_area input_box">
                     <div class="input_title">이메일</div><span id = "emailResult"></span>
                     <input
@@ -135,9 +135,9 @@
                     </div>
                 </div>
                 <!--회원가입버튼-->
-                <a href="">
-                    <button class="join_button">회원가입 완료</button>
-                </a>
+                
+                    <button class="join_button" type = "button" onclick="activeButton()">회원가입 완료</button>
+                
             </form>
         </main>
 

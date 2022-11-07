@@ -30,7 +30,7 @@ public class DriverJoinOkController implements Execute {
 		driverVO.setDriverEmail(driverEmail);
 		driverVO.setDriverPassword(driverPassword);
 		driverVO.setDriverArea(driverArea);
-		driverVO.setDriverBank(driverAccountBank);
+		driverVO.setDriverAccountBank(driverAccountBank);
 		driverVO.setDriverAccountNumber(driverAccountNumber);
 		
 		driverDAO.driverJoin(driverVO);
