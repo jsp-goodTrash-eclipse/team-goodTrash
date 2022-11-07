@@ -19,7 +19,6 @@ public class DriverLoginOkController implements Execute {
 
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServerException {
-		System.out.println("2. Controller 들어옴");
 		Result result = new Result();
 		DriverVO driverVO = new DriverVO();
 		DriverDAO driverDAO = new DriverDAO();
@@ -30,8 +29,6 @@ public class DriverLoginOkController implements Execute {
 		String driverPassword = req.getParameter("pw");
 		String saveId = req.getParameter("save_id");
 		
-		System.out.println(driverEmail);
-		System.out.println(driverPassword);
 		
 		driverVO.setDriverEmail(driverEmail);
 		driverVO.setDriverPassword(driverPassword);
@@ -58,13 +55,10 @@ public class DriverLoginOkController implements Execute {
 					}
 				}
 			}
-			System.out.println(":로그인 성공들어옴");
-			result.setPath("driver/main.driver");
+			result.setPath("/driver/main.driver");
 			
 		} catch (Exception e) {
 			// 로그인 실패
-//			System.out.println(e);
-			System.out.println("로그인실패 들어옴");
 			result.setPath("/driver/login.driver?driverLogin=false");
 		}
 		return result;

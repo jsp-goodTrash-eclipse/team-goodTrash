@@ -14,9 +14,13 @@
 	
 	<select id="driverLogin" parameterType="DriverVO" resultType="_int">
 		select driver_number from tbl_driver
-		where driver_email = #{driverEmail} and driver_password = #{driverPasswod}
+		where driver_email = #{driverEmail} and driver_password = #{driverPassword}
 	</select>
 	
+	<select id="getDriverEmail" parameterType="_int" resultType="string">
+		select driver_email from tbl_driver
+		where driver_number = #{driverNumber}
+	</select>
 	
    
 </mapper>

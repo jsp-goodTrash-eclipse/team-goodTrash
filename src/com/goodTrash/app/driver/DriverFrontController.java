@@ -49,15 +49,15 @@ public class DriverFrontController extends HttpServlet{
 			
 			// 로그인 확인 여부
 		}else if(target.equals("/driver/loginOk.driver")) {
-			System.out.println("1. FC 들어옴");
 			result = new DriverLoginOkController().execute(req,resp);
 			
+			// 로그아웃 세션 초기화 및 쿠키를 위해 컨트롤러 타고 가도록 
 		}else if(target.equals("/driver/logout.driver")) {
 			result = new DriverLogoutController().execute(req,resp);
 			
-		}else if(target.equals("driver/main.driver")) {
-			result = new Result();
-			result.setPath("/app/rider/my_page.jsp");
+			// 기사 로그인 성공 후 기사 페이지로 이동 하도록 설정 
+		}else if(target.equals("/driver/main.driver")) {
+			result = new DriverMyPageController().execute(req , resp);
 		}
 		
 		if(result != null) {
