@@ -74,9 +74,8 @@
         </nav>
         <article class="top_home">
             <h1 class="home">
-                <a href="">
+                <a href="${pageContext.request.contextPath}/user/mainPage.user">
                     <span class="logo">
-                        <img src="C:\web_1900_pej\js\workspace\myProject.html\imgs\home.png">
                     </span>
                 </a>
             </h1>
@@ -87,10 +86,10 @@
                     </button>
                     <ul>
                     <li class="active">
-                        <a href="">홈</a>
+                        <a href="${pageContext.request.contextPath}/user/mainPage.user">홈</a>
                     </li>
                     <li class="active">
-                        <a href="">스토어</a>
+                        <a href="${pageContext.request.contextPath}/product/main.product">스토어</a>
                     </li>
                     <li class="active">
                         <a href="">커뮤니티</a>
@@ -107,7 +106,7 @@
                     <span class="c cart">
                         장바구니</span>
                     </a>
-                    <a href="" class="btn_t my">
+                    <a href="${pageContext.request.contextPath}/myPage/main.mp" class="btn_t my">
                     <span class="c my">
                         마이페이지</span>
                     </a>
@@ -176,7 +175,14 @@
 									<td><c:out value="${history.getGarbageCollectType()}"/></td>
 									<td><c:out value="${history.getGarbageCollectRequestDate()}"/></td>
 									<td><c:out value="${history.getGarbageCollectName()}"/></td>
-									<td><c:out value="${history.getGarbageCollectStatus()}"/></td>
+									<c:choose>
+							              <c:when test="${history.getGarbageCollectStatus() eq '수거완료'}">
+							              	<td style="color:#ff0000"><c:out value="${history.getGarbageCollectStatus()}"/></td>
+							              </c:when>
+							              <c:when test="${history.getGarbageCollectStatus() eq '예약완료'}">
+							              	<td style="color:#000000"><c:out value="${history.getGarbageCollectStatus()}"/></td>
+							              </c:when>
+							        </c:choose>
 								</tr>
 							</c:forEach>
 						</c:when>
@@ -294,4 +300,5 @@
     </footer>   
     
 </body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </html>

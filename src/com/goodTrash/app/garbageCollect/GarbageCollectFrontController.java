@@ -31,8 +31,9 @@ public class GarbageCollectFrontController extends HttpServlet{
 			
 //		신청 페이지
 		}else if(target.equals("/garbageCollect/reservation.collect")) {
-			result = new Result();
-			result.setPath("/app/garbageCollect/reservation.jsp");
+//			result = new Result();
+//			result.setPath("/app/garbageCollect/reservation.jsp");
+			result = new ReservationController().execute(req, resp);
 			
 //		신청 완료
 		}else if(target.equals("/garbageCollect/reservationOk.collect")) {

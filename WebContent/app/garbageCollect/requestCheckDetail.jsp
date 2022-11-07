@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/garbageCollect/requestCheckDetail.css">
 </head>
 <body>
+	<jsp:include page="${pageContext.request.contextPath}/app/garbageCollect/header.jsp"/>
+
 	<main>
         <div class="detail_area">
             <!-- 기본정보 -->
@@ -95,16 +97,27 @@
                 </tbody>
             </table>
         </div>
-        <div class="button_area">
-            <button class="buttons button_cancel" type="button" style="cursor: pointer;" onclick="deleteCheck();">
-                예약 취소
-            </button>
-            <a href="${pageContext.request.contextPath}/garbageCollect/history.collect">
-            <button class="buttons button_list" type="button" style="cursor: pointer;">목록보기</button>
-            </a>
-        </div>
+        <c:choose>
+            <c:when test="${requestDetail.getGarbageCollectStatus() eq '수거완료'}">
+            	<div class="button_area">
+		            <a href="${pageContext.request.contextPath}/garbageCollect/history.collect">
+		            	<button class="buttons button_list" type="button" style="cursor: pointer;">목록보기</button>
+		            </a>
+		        </div>
+            </c:when>
+            <c:otherwise>
+            		<div class="button_area">
+			            <button class="buttons button_cancel" type="button" style="cursor: pointer;" onclick="deleteCheck();">
+			                예약 취소
+			            </button>
+			            <a href="${pageContext.request.contextPath}/garbageCollect/history.collect">
+			            <button class="buttons button_list" type="button" style="cursor: pointer;">목록보기</button>
+			            </a>
+			        </div>	
+            </c:otherwise>
+        </c:choose>
         </main>
-        
+        <jsp:include page="${pageContext.request.contextPath}/app/garbageCollect/footer.jsp"/>
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="${pageContext.request.contextPath}/assets/js/garbageCollect/jquery.min.js"></script>

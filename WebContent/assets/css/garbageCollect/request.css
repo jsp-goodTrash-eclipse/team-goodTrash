@@ -18,6 +18,10 @@ button {
     border: 0;
 }
 
+img {
+	border: 0px;
+}
+
 #header.util {
     line-height: 40px;
     background-color: #f2f2f2;
@@ -242,6 +246,13 @@ span.sell2 {
 }
 .request_cur {
     height: 350px;
+}
+
+.top_home span.logo {
+    width: 160px;
+    height: 31px;
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    display: inline-block;
 }
 
 /*-------------------------
