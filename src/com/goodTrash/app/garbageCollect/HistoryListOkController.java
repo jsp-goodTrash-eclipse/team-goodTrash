@@ -22,6 +22,7 @@ public class HistoryListOkController implements Execute {
 		String temp = req.getParameter("page");
 		HashMap<String, Integer> pageMap = new HashMap<String, Integer>();
 		
+		
 		int userNumber = (Integer)req.getSession().getAttribute("userNumber");
 		
 		System.out.println(userNumber);
@@ -35,7 +36,7 @@ public class HistoryListOkController implements Execute {
 		int pageCount = 10;
 		int startRow = (page - 1) * rowCount;
 		
-		int total = garbageCollectDAO.getTotal(); 
+		int total = garbageCollectDAO.getTotal(userNumber); 
 		
 		int endPage = (int)(Math.ceil(page / (double)pageCount) * pageCount);
 		int startPage = endPage - (pageCount - 1);
