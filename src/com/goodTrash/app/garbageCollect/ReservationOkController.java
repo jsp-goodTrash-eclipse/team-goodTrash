@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.goodTrash.app.Execute;
 import com.goodTrash.app.Result;
 import com.goodTrash.app.garbageCollect.dao.GarbageCollectDAO;
-import com.goodTrash.app.garbageCollect.vo.GarbageCollectDTO;
+import com.goodTrash.app.garbageCollect.vo.GarbageCollectVO;
 import com.goodTrash.app.user.dao.UserDAO;
 
 public class ReservationOkController implements Execute {
@@ -20,7 +20,7 @@ public class ReservationOkController implements Execute {
 		
 		GarbageCollectDAO garbageCollectDAO = new GarbageCollectDAO();
 		UserDAO userDAO = new UserDAO();
-		GarbageCollectDTO garbageCollectDTO = new GarbageCollectDTO();
+		GarbageCollectVO garbageCollectVO = new GarbageCollectVO();
 		Result result = new Result();
 		
 		int userNumber = 0;
@@ -29,20 +29,20 @@ public class ReservationOkController implements Execute {
 			userNumber = (Integer)req.getSession().getAttribute("userNumber");
 			userDAO.getUserNumber(userNumber);
 			
-			garbageCollectDTO.setGarbageCollectName(req.getParameter("garbageCollectName"));
-			garbageCollectDTO.setGarbageCollectPhoneNumber(req.getParameter("garbageCollectPhoneNumber"));
-			garbageCollectDTO.setGarbageCollectZipcode(Integer.valueOf(String.format("%05d", Integer.valueOf(req.getParameter("garbageCollectZipcode")))));
-			garbageCollectDTO.setGarbageCollectAddress(req.getParameter("garbageCollectAddress"));
-			garbageCollectDTO.setGarbageCollectAddressDetail(req.getParameter("garbageCollectAddressDetail"));
-			garbageCollectDTO.setGarbageCollectType(req.getParameter("garbageCollectType"));
-			garbageCollectDTO.setGarbageCollectBoxCount(req.getParameter("garbageCollectBoxCount"));
-			garbageCollectDTO.setGarbageCollectRequestDate(req.getParameter("garbageCollectRequestDate"));
-			garbageCollectDTO.setGarbageCollectMemo(req.getParameter("garbageCollectMemo"));
-			garbageCollectDTO.setGarbageCollectStatus("예약완료");
-			garbageCollectDTO.setUserNumber(userNumber);		
+			garbageCollectVO.setGarbageCollectName(req.getParameter("garbageCollectName"));
+			garbageCollectVO.setGarbageCollectPhoneNumber(req.getParameter("garbageCollectPhoneNumber"));
+			garbageCollectVO.setGarbageCollectZipcode(Integer.valueOf(String.format("%05d", Integer.valueOf(req.getParameter("garbageCollectZipcode")))));
+			garbageCollectVO.setGarbageCollectAddress(req.getParameter("garbageCollectAddress"));
+			garbageCollectVO.setGarbageCollectAddressDetail(req.getParameter("garbageCollectAddressDetail"));
+			garbageCollectVO.setGarbageCollectType(req.getParameter("garbageCollectType"));
+			garbageCollectVO.setGarbageCollectBoxCount(req.getParameter("garbageCollectBoxCount"));
+			garbageCollectVO.setGarbageCollectRequestDate(req.getParameter("garbageCollectRequestDate"));
+			garbageCollectVO.setGarbageCollectMemo(req.getParameter("garbageCollectMemo"));
+			garbageCollectVO.setGarbageCollectStatus("예약완료");
+			garbageCollectVO.setUserNumber(userNumber);		
 			
 			
-			garbageCollectDAO.reservation(garbageCollectDTO);
+			garbageCollectDAO.reservation(garbageCollectVO);
 			
 			result.setRedirect(true);
 			result.setPath(req.getContextPath() + "/garbageCollect/request.collect");

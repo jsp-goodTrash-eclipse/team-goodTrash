@@ -20,7 +20,7 @@ public class RequestDeleteController implements Execute {
 		garbageCollectDAO.delete(garbageCollectNum);
 		
 		result.setRedirect(true);
-		result.setPath("/garbageCollect/history.collect");
+		result.setPath(req.getContextPath() + "/garbageCollect/history.collect");
 		return result;
 	}
 

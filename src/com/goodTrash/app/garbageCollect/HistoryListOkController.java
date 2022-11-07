@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.goodTrash.app.Execute;
 import com.goodTrash.app.Result;
 import com.goodTrash.app.garbageCollect.dao.GarbageCollectDAO;
+import com.goodTrash.app.garbageCollect.vo.GarbageCollectVO;
 import com.goodTrash.app.user.dao.UserDAO;
 
 public class HistoryListOkController implements Execute {
@@ -17,13 +18,13 @@ public class HistoryListOkController implements Execute {
 	@Override
 	public Result execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServerException {
 		GarbageCollectDAO garbageCollectDAO = new GarbageCollectDAO();
-		UserDAO userDAO = new UserDAO();
 		Result result = new Result();
 		String temp = req.getParameter("page");
 		HashMap<String, Integer> pageMap = new HashMap<String, Integer>();
 		
-		int userNumber = 0;
-		userNumber = (Integer)req.getSession().getAttribute("userNumber");
+		int userNumber = (Integer)req.getSession().getAttribute("userNumber");
+		
+		System.out.println(userNumber);
 		
 		int page = temp == null ? 1 : Integer.parseInt(temp);
 		
@@ -34,7 +35,7 @@ public class HistoryListOkController implements Execute {
 		int pageCount = 10;
 		int startRow = (page - 1) * rowCount;
 		
-		int total = garbageCollectDAO.getTotal(userNumber); 
+		int total = garbageCollectDAO.getTotal(); 
 		
 		int endPage = (int)(Math.ceil(page / (double)pageCount) * pageCount);
 		int startPage = endPage - (pageCount - 1);
@@ -46,6 +47,7 @@ public class HistoryListOkController implements Execute {
 		
 		pageMap.put("rowCount", rowCount);
 		pageMap.put("startRow", startRow);
+		pageMap.put("userNumber", userNumber);
 		
 		req.setAttribute("historys", garbageCollectDAO.historyList(pageMap));
 		req.setAttribute("total", total);
@@ -54,7 +56,6 @@ public class HistoryListOkController implements Execute {
 		req.setAttribute("prev", prev);
 		req.setAttribute("next", next);
 		
-				
 		result.setPath("/app/garbageCollect/history.jsp");
 		
 		return result;
