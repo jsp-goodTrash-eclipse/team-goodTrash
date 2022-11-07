@@ -36,6 +36,8 @@ public class UserDAO {
 		return sqlSession.selectOne("user.getUserNumber", userNumber);
 	}
 	
+	
+	
 
 	
 }

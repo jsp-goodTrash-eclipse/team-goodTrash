@@ -20,10 +20,11 @@ public class DriverDAO {
 	}
 	
 	public int driverLogin(DriverVO driverVO) {
-		System.out.println("DAO 들어옴");
-		System.out.println(driverVO.getDriverEmail());
-		System.out.println(driverVO.getDriverPassword());
-		System.out.println(sqlSession.selectOne("driver.driverLogin",driverVO));
-		return (Integer)sqlSession.selectOne("driver.driverLogin",driverVO);
+		return sqlSession.selectOne("driver.driverLogin",driverVO);
+	}
+	
+	// 세션에 저장된 driverNumber를 통해 driverEmail을 가져온다.
+	public String getDriverEmail(int driverNumber) {
+		return sqlSession.selectOne("driver.getDriverEmail",driverNumber);
 	}
 }

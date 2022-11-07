@@ -36,7 +36,7 @@ public class DriverLogoutController implements Execute {
 			}
 		}
 		
-		result.setPath("app/rider/my_page.jsp");
+		result.setPath("/app/riderService/my_page.jsp");
 		return result;
 	}
 
