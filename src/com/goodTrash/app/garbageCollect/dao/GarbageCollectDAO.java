@@ -25,8 +25,8 @@ public class GarbageCollectDAO {
 		return sqlSession.selectList("garbageCollect.historyList", pageMap);
 	}
 	
-	public int getTotal() {
-		return sqlSession.selectOne("garbageCollect.getTotal"); 
+	public int getTotal(int userNumber) {
+		return sqlSession.selectOne("garbageCollect.getTotal", userNumber); 
 	}
 	
 	public GarbageCollectVO select(int garbageCollectNum) {
@@ -39,6 +39,10 @@ public class GarbageCollectDAO {
 	
 	public List<GarbageCollectVO> list(int userNumber) {
 		return sqlSession.selectOne("garbageCollect.list", userNumber);
+	}
+	
+	public int listCount() {
+		return sqlSession.selectOne("garbageCollect.listCount");
 	}
 
 }

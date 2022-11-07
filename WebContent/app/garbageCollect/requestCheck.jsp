@@ -48,15 +48,24 @@
             </div>
             <div class="link_my">
             <ul>
-                <li>
-                    <a href="" style="text-decoration: none;">로그인</a>
-                </li>
-                <li>
-                    <a href="">회원가입</a>
-                </li>
-                <li>
-                    <a href="">마이페이지</a>
-                </li>
+            	<c:choose>
+            		<c:when test="${empty sessionScope.userNumber}">
+            			 <li>
+                    		<a href="${pageContext.request.contextPath}/user/login.user" style="text-decoration: none;">로그인</a>
+               			 </li>
+			             <li>
+			             	<a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
+			             </li>
+            		</c:when>
+            		<c:otherwise>
+            			<li>
+                    		<a href="${pageContext.request.contextPath}/myPage/main.mp">마이페이지</a>
+               			</li>
+               			<li>
+                   			<a href="${pageContext.request.contextPath}/user/logout.user">로그아웃</a>
+               			</li>
+            		</c:otherwise>
+            	</c:choose>
             </ul>
             </div>
         </div>

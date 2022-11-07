@@ -16,8 +16,9 @@
 		limit #{startRow}, #{rowCount}
 	</select>
 	
-	<select id="getTotal" resultType="_int">
+	<select id="getTotal" parameterType="_int" resultType="_int">
 		select count(garbage_collect_num) from tbl_garbage_collect
+		where user_number = #{userNumber}
 	</select>
 	
 	<select id="select" parameterType="_int" resultType="garbageCollectVO">
