@@ -6,10 +6,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.sql.rowset.serial.SerialException;
 
 import com.goodTrash.app.Result;
+import com.goodTrash.app.myPage.InquiryListController;
 
-public class MyPageFrontcontroller extends HttpServlet {
+public class MyPageFrontController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doProcess(req, resp);
@@ -24,14 +26,25 @@ public class MyPageFrontcontroller extends HttpServlet {
 	protected void doProcess(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String target = req.getRequestURI().substring(req.getContextPath().length());
 		Result result = null;
+		System.out.println(target);
 		
 //		사용자 마이페이지
-		if(target.equals("/myPage/main.mp")){
-			result = new Result();
-			result.setPath("/app/myPage/myPage.jsp");
-			
+		if(target.equals("/mypage/main.mp")){
+			 result = new Result(); 
+			 result.setPath("/app/myPage/myPage.jsp");
+			 
 //			사용자 수거내역 페이지
-		}else if(target.equals("/myPage/history.mp")) {
+		}else if(target.equals("/mypage/history.ht")) {
+			 result = new Result(); 
+			 result.setPath("/app/garbageCollect/history.jsp");
+			
+//			1대1 문의 페이지
+		}else if(target.equals("/mypage/inquiry.iq")) {
+				result = new InquiryListController().execute(req, resp);
+		
+				
+		}else if(target.equals("/mypage/inquiryDelete.iq")) {
+			result = new InquiryDeleteController().execute(req, resp);
 			
 		}
 		

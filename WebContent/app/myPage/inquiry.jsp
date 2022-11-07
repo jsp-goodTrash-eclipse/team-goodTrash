@@ -1,3 +1,8 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.text.SimpleDateFormat" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>          
@@ -84,7 +89,7 @@
         </nav>
         <article class="top_home">
             <h1 class="home">
-                <a href="">
+                <a href="${pageContext.request.contextPath}/app/mainPage/main.jsp">
                     <span class="logo">
                     </span>
                 </a>
@@ -154,44 +159,73 @@
                     <th class="col">등록일</th>
                     <th class="col">상태</th>
                     <th class="col">삭제</th>
-                    <th class="col"></th>
+                    <th class="col">답변</th>
                 </tr>
             </thead>
             <tbody>
+            <%
+            Class.forName("com.mysql.jdbc.Driver");
+            String dbUrl="jdbc:mysql://localhost:3306/recycle_project";
+            String dbUser = "root";
+            String dbPass = "1234";
+            Connection con = DriverManager.getConnection(dbUrl, dbUser, dbPass);
+            String sql = "select*from tbl_inquiry;";
+            PreparedStatement pstmt = con.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery(sql);
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-mm-dd HH:mm:ss");
+            %>
                 <tr>
+                <%
+            			while(rs.next()){
+           			 %>
+           			 <div id='my_div'>
                     <td>
-                        <div>14716</div>
+                        <%=rs.getString("inquiry_number")%>   
                     </td>
                     <td>
-                        <a href="">문의사항</div>
+                         <%=rs.getString("inquiry_type")%> 
                         </td>
                         <td>
-                            <div>2022.10.28</div>
+                             <%=rs.getString("inquiry_date")%> 
                         </td>
+                        </div>
                         <td>
                             <button type="button" class="btn" style="pointer-events: none;">미완료</button>
                         </td>
                         <td>
-                            <button type="button" class="btn btn_del" onclick="">삭제</button>
+                        <div>
+                            <button type="button" class="btn btn_del">삭제</button>
+                        </div>
                         </td>
                         <td>
-                            <span class="arrow2"></span>
+                            <a href="javascript:doDisplay();">
+                            <span class="arrow2" id="btn_toggle">
+                                 </span>
+                                       </a>
                         </td>
                 </tr>
-                <tr class="t_onoff">
+                <tr class="t_onoff" id="myDIV" style="display:none">
                     <td colspan="6">
                         <div>
                            <div class="q_box">
-                            수거는 어떻게 하나요?
+                         <%=rs.getString("inquiry_detail")%>  
                            </div> 
                            <div class="a_box">
-                            답변 대기중 입니다.
-                           </div> 
+                           답변 대기 중입니다.
+                           </div>  
                         </div>
                     </td>
                 </tr>
+                  <%} %> 
+           
             </tbody>
         </table>
+	<div id="Toggle" style="display:none">
+	<div class="a_box">
+                           답변 대기 중입니다.
+                           </div> 
+	</div>
+
     </div>
 
     <footer id="footer">
@@ -267,4 +301,7 @@
         </div>
     </footer>
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/inquiry/inquiryDelete.js"></script>
+<script src="${pageContext.request.contextPath}/assets/js/inquiry/inquiryResponse.js"></script>
 </html>

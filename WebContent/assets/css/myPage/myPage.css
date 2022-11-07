@@ -293,11 +293,12 @@ div#photo {
     width: 12px;
     height: 20px;
     font-size: 0;
-    background: url(https://www.shouse.garden/images/ico/pen_g.png) center center no-repeat;
+     background: url(https://www.shouse.garden/images/ico/pen_g.png) center center no-repeat; 
     background-size: 100% auto;
     position: absolute;
     margin-top: 13px;
 }
+
 button.sns {
     float: left;
     margin: 2px;
