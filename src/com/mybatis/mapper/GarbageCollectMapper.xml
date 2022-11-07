@@ -22,7 +22,7 @@
 	</select>
 	
 	<select id="select" parameterType="_int" resultType="garbageCollectVO">
-		select garbage_collect_num, garbage_collect_name, garbage_collect_phone_number, garbage_collect_zipcode, garbage_collect_address, garbage_collect_address_detail,  garbage_collect_type, garbage_collect_box_count, garbage_collect_request_date, garbage_collect_memo
+		select garbage_collect_num, garbage_collect_name, garbage_collect_phone_number, garbage_collect_zipcode, garbage_collect_address, garbage_collect_address_detail,  garbage_collect_type, garbage_collect_box_count, garbage_collect_request_date, garbage_collect_memo, garbage_collect_status
 		from tbl_garbage_collect
 		where garbage_collect_num = #{garbageCollectNum}
 	</select>

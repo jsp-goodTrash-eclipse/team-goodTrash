@@ -312,3 +312,10 @@ span.arrow {
 .fnav li {
     margin-left: 28px;
 }
+
+.top_home span.logo {
+    width: 160px;
+    height: 31px;
+    background-image: url(https://www.shouse.garden/images/common/sp_common.png);
+    display: inline-block;
+}
