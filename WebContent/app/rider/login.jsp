@@ -31,7 +31,7 @@
         </header>
         <main>
             <!--input-->
-            <form class="input_area" method="get" id = "inputForm" name="form" action="${pageContext.request.contextPath}/driver/loginOk.driver">
+            <form class="input_area" method="post" id = "inputForm" name="form" action="${pageContext.request.contextPath}/driver/loginOk.driver">
                 <input type="text" name="email" placeholder="이메일" />
                 <input
                     type="password"

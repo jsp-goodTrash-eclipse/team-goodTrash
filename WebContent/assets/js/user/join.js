@@ -1,15 +1,50 @@
 /*console.log("안녕");*/
 
 const button = document.getElementById('submitBtn');
-
 button.disabled = true;
 
-function checkCheck(){
+var $checkNum1After;
+var $checkNum2After;
+
+function checkCheckNum1(){
+	$checkNum1After = $("#checkNum1").prop("checked");
+}
+function checkCheckNum2(){
+	$checkNum2After = $("#checkNum2").prop("checked");
+}
+
+
+
+/*function checkCheck(){
 	if(checkEmailAfter==true && checkPasswordAfter==true && checkNicknameAfter==true){
 		button.disabled = false;
 	}
-}
+}*/
 
+/*버튼 전체 동의 */
+
+/*전체 동의 누르면 전체 다 눌림*/
+$(".policy").on("click","#selectAll",function(){
+	$(this).parents(".policy").find('input').prop("checked", $(this).is(":checked"));
+	checkCheckNum1();
+	checkCheckNum2();
+	checkCheck();
+	
+})
+
+$(".policy").on("click",".requiredCheckbox",function(){
+	
+	var is_checked = true;
+
+    $(".policy .requiredCheckbox").each(function(){
+        is_checked = is_checked && $(this).is(":checked");
+    });
+
+    $("#selectAll").prop("checked", is_checked);
+	checkCheckNum1();
+	checkCheckNum2();
+	checkCheck();
+});
 
 
 
@@ -28,6 +63,8 @@ function checkEmail(userEmail) {
 		$("#emailResult").text("이메일을 입력하세요");
 		$("#emailResult").css("color","red");
 		$("#emailResult").css("font-size","10px");
+		checkEmailAfter = false;
+		checkCheck();
 		return;
 	}
 	
@@ -45,6 +82,7 @@ function checkEmail(userEmail) {
 			else{
 				message = "사용 불가능한 아이디 입니다."
 				color="red";
+				checkEmailAfter = false;
 				console.log("3,사용 불가능 아이디",result);
 			}
 			$("#emailResult").css("color", color);
@@ -74,6 +112,8 @@ function checkNickname(userNickname){
 		$("#nicknameResult").text("닉네임을 입력하세요");
 		$("#nicknameResult").css("color","red");
 		$("#nicknameResult").css("font-size","10px");
+		checkNicknameAfter = false;
+		checkCheck();
 		return;
 	}
 	
@@ -91,6 +131,7 @@ function checkNickname(userNickname){
 			}else{
 				message = "사용 불가능한 닉네임 입니다."
 				color="red";
+				checkNicknameAfter = false;
 				console.log("3,사용 불가능 아이디",result);
 			}
 			$("#nicknameResult").css("color", color);
@@ -120,6 +161,7 @@ function checkPassword(password2){
 		$("#passwordResult").text("비밀번호를 확인해 주세요");
 		$("#passwordResult").css("color","red");
 		$("#passwordResult").css("font-size","10px");
+		checkPasswordAfter = false;
 	}else{
 		$("#passwordResult").text("");
 		checkPasswordAfter = true;
@@ -134,8 +176,16 @@ function activeButton(){
 
 /* 체크를 체크하는 function */
 function checkCheck(){
-	if(checkEmailAfter==true && checkPasswordAfter==true && checkNicknameAfter==true){
+	if(checkEmailAfter==true && checkPasswordAfter==true && checkNicknameAfter==true &&$checkNum1After==true &&$checkNum2After == true){
+		$("#submitBtn").css("background-color","green");
+		$("#submitBtn").css("border-color","green");
+		$("#submitBtn").css("cursor","pointer");
 		button.disabled = false;
+	}else{
+		$("#submitBtn").css("background-color","#808080");
+		$("#submitBtn").css("border-color","#808080");
+		$("#submitBtn").css("cursor","default");
+		button.disabled = true;
 	}
 }
 

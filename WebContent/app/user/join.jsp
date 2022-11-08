@@ -81,13 +81,25 @@
                             <dt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;약관동의</dt>
                             <dd>
                                 <div class="policy">
+                                
+                                	 <div class="check">
+                                        
+                                            전체동의
+                                           <span></span>
+                                        
+                                        <label>
+                                            <input type="checkbox" id="selectAll" >
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                
                                     <div class="check">
                                         
                                             이용약관
                                            <span>(필수)</span>
                                         
                                         <label>
-                                            <input type="checkbox" data-required="true" class = "requiredCheckbox">
+                                            <input type="checkbox" class = "requiredCheckbox" id="checkNum1">
                                             <span></span>
                                         </label>
                                     </div>
@@ -97,7 +109,7 @@
                                            <span>(필수)</span>
                                        
                                         <label>
-                                            <input type="checkbox" data-required="true" class = "requiredCheckbox">
+                                            <input type="checkbox"  class = "requiredCheckbox" id="checkNum2">
                                             <span></span>
                                         </label>
                                     </div>
@@ -107,7 +119,7 @@
                                            <span>(선택)</span>
                                         
                                         <label>
-                                            <input type="checkbox" data-required="true">
+                                            <input type="checkbox" class = "requiredCheckbox" >
                                             <span></span>
                                         </label>
                                     </div>
