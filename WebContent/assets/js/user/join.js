@@ -13,6 +13,44 @@ function checkCheckNum2(){
 	$checkNum2After = $("#checkNum2").prop("checked");
 }
 
+/* 이메일 형식 검사 */
+
+let checkEmailFormAfter = false;
+const input = form.userEmail;
+const span = document.getElementById("emailResult");
+
+function CheckEmail(str) {
+    var reg_email =
+        /^([0-9a-zA-Z_\.-]+)@([0-9a-zA-Z_-]+)(\.[0-9a-zA-Z_-]+){1,2}$/;
+    if (!reg_email.test(str)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
+input.addEventListener("blur", function () {
+    if (!this.value) {
+        span.innerHTML = "이메일 형식이 올바르지 않습니다.";
+        span.style.color = "red";
+        span.style.fontSize = "14px";
+		checkEmailFormAfter = false;
+		checkCheck();
+    } else {
+        if (!CheckEmail(this.value)) {
+            span.innerHTML = "이메일 형식이 올바르지 않습니다.";
+            span.style.color = "red";
+            span.style.fontSize = "14px";
+			checkEmailFormAfter = false;
+			checkCheck();
+        } else {
+            span.innerHTML = "";
+			checkEmailFormAfter = true;
+			checkCheck();
+        }
+    }
+});
+
 
 
 /*function checkCheck(){
@@ -73,7 +111,7 @@ function checkEmail(userEmail) {
 		data : {"userEmail":userEmail},
 		success : function(result){
 			let message , color ;
-			if(result =="true"){
+			if(result =="true" &&checkEmailFormAfter == true){
 				message = "사용가능한 아이디 입니다."
 				color="blue";
 				checkEmailAfter=true;
@@ -96,6 +134,44 @@ function checkEmail(userEmail) {
 		}
 	})
 }
+
+/* 비밀번호 8글자 이상 */
+
+let passwordLengthCheckAfter = false;
+const pwInput = form.userPassword;
+const pwSpan = document.getElementById("passwordResult");
+pwInput.addEventListener("blur", function () {
+    if (this.value.length < 8) {
+        pwSpan.innerHTML = "비밀번호를 8자 이상 입력해주세요.";
+        pwSpan.style.color = "red";
+        pwSpan.style.fontSize = "14px";
+		passwordLengthCheckAfter = false;
+		checkCheck();
+    } else {
+        pwSpan.innerHTML = "";
+		passwordLengthCheckAfter = true;
+		checkCheck();
+
+    }
+});
+
+/* 비밀번호 확인 */
+const pwCheck = form.password2;
+const pwCheckSpan = document.getElementById("pwCheck_result");
+let checkPasswordSameAfter = false;
+
+pwCheck.addEventListener("blur", function () {
+    if (this.value != pwInput.value) {
+        pwSpan.innerHTML = "두 비밀번호가 일치하지 않습니다.";
+        pwSpan.style.color = "red";
+        pwSpan.style.fontSize = "14px";
+		checkPasswordSameAfter = false;
+    } else {
+        pwSpan.innerHTML = "";
+		checkPasswordSameAfter = true;
+    }
+	checkCheck();
+});
 
 /* 가입 닉네임 중복 확인*/
 
@@ -147,12 +223,13 @@ function checkNickname(userNickname){
 }
 /* 비밀번호 확인 검사*/
 
-
+/*
 $("#password2").on("blur",function(){
 	checkPassword($(this).val());
-});
+});*/
 
 /* 비밀번호 확인 됐을때 true 로 변경하여 버틑 활성화*/
+/*
 let checkPasswordAfter=false;	
 
 function checkPassword(password2){
@@ -169,14 +246,14 @@ function checkPassword(password2){
 	}
 	checkCheck();
 }
-	
+*/
 function activeButton(){
 	form.submit();
 }
 
 /* 체크를 체크하는 function */
 function checkCheck(){
-	if(checkEmailAfter==true && checkPasswordAfter==true && checkNicknameAfter==true &&$checkNum1After==true &&$checkNum2After == true){
+	if(checkEmailAfter==true && checkNicknameAfter==true &&$checkNum1After==true &&$checkNum2After == true && checkEmailFormAfter == true &&passwordLengthCheckAfter == true &&checkPasswordSameAfter == true){
 		$("#submitBtn").css("background-color","green");
 		$("#submitBtn").css("border-color","green");
 		$("#submitBtn").css("cursor","pointer");

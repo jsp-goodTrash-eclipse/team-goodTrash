@@ -50,6 +50,7 @@
                             </dd>
                             <dd id="passck">
                                 <label>
+                                	<span id = "pwCheck_result"></span>
                                     <input style="margin-top: 10px;" type="password" name="password2" class="userInput" id="password2"
                                     autocomplete="off" placeholder="비밀번호 확인">
                                 </label>

@@ -2,6 +2,8 @@ const button = document.getElementById("joinButton");
 
 button.disabled = true;
 console.log(button.disabled);
+var $checkNum1After;
+var $checkNum2After;
 
 /* 이메일 형식 검사 */
 
