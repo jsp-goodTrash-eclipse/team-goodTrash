@@ -7,6 +7,11 @@
 <meta charset="UTF-8">
     <title>로그인</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/assets/css/user/login.css">
+    <style type="text/css">
+    	a:link { color: red; text-decoration: none;}
+ 		a:visited { color: black; text-decoration: none;}
+ 		a:hover { color: blue; text-decoration: underline;}
+    </style>
 </head>
 <body>
 <c:if test="${not empty param.login}">
@@ -41,7 +46,7 @@
                             </div>
                             <div style="display: inline-block;" class="link_fr">
                                 <a href="#">비밀번호 재설정</a>
-                                <a href="join.html">회원가입</a>
+                                <a href="${pageContext.request.contextPath}/user/join.user">회원가입</a>
                             </div>
                         </div>
                         <dl class="easy_login">

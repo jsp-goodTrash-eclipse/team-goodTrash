@@ -28,7 +28,7 @@
         <main>
             <form name="form" action="${pageContext.request.contextPath}/driver/joinOk.driver">
                 <div class="input_email_area input_box">
-                    <div class="input_title">이메일</div><span id = "emailResult"></span>
+                    <div class="input_title">이메일<span id = "emailResult"></span></div>
                     <input
                         type="text"
                         name="driverEmail"
@@ -99,7 +99,8 @@
                                 <input
                                     type="checkbox"
                                     name="check"
-                                    id="check"
+                                    class="check"
+                                    id="checkNum1"
                                 />
                             </div>
                             <div class="check secondPolicy">
@@ -114,7 +115,8 @@
                                 <input
                                     type="checkbox"
                                     name="check"
-                                    id="check"
+                                    class="check"
+                                    id="checkNum2"
                                 />
                             </div>
                             <div class="check thirdPolicy">
@@ -128,7 +130,8 @@
                                 <input
                                     type="checkbox"
                                     name="check"
-                                    id="check"
+                                    class="check"
+                                    id="checkNum3"
                                 />
                             </div>
                         </div>
@@ -136,7 +139,7 @@
                 </div>
                 <!--회원가입버튼-->
                 
-                    <button class="join_button" type = "button" onclick="activeButton()">회원가입 완료</button>
+                    <button id="joinButton" class="join_button" type = "button" onclick="activeButton()" >회원가입 완료</button>
                 
             </form>
         </main>
